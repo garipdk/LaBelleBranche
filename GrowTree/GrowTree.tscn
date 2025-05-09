@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://coe6hqacb5mji"]
+
+[node name="GrowTree" type="Node3D"]
