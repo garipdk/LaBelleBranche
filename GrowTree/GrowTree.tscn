@@ -1,6 +1,302 @@
-[gd_scene load_steps=2 format=3 uid="uid://coe6hqacb5mji"]
+[gd_scene load_steps=32 format=3 uid="uid://coe6hqacb5mji"]
 
 [ext_resource type="Script" uid="uid://y4fuijfll6vg" path="res://GrowTree/grow_tree.gd" id="1_bmqap"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spcsk"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4ssft"]
+material = SubResource("StandardMaterial3D_spcsk")
+radius = 0.25
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7sx0u"]
+albedo_color = Color(0.252028, 0.252028, 0.252028, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bmqap"]
+material = SubResource("StandardMaterial3D_7sx0u")
+radius = 0.25
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0dpw"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hn6fc"]
+material = SubResource("StandardMaterial3D_i0dpw")
+radius = 0.25
+height = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i0dpw"]
+material = SubResource("StandardMaterial3D_7sx0u")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8fvsf"]
+material = SubResource("StandardMaterial3D_spcsk")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6mode"]
+material = SubResource("StandardMaterial3D_i0dpw")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1poxr"]
+material = SubResource("StandardMaterial3D_7sx0u")
+radius = 1.0
+height = 4.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ss1df"]
+material = SubResource("StandardMaterial3D_spcsk")
+radius = 1.0
+height = 4.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qrlye"]
+material = SubResource("StandardMaterial3D_i0dpw")
+radius = 1.0
+height = 4.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_bmqap"]
+size = Vector2(1.6, 0.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmqap"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_spcsk"]
+material = SubResource("StandardMaterial3D_bmqap")
+size = Vector3(0.2, 0.2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bmqap"]
+size = Vector3(0.2, 0.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ssft"]
+albedo_color = Color(0.545098, 0.270588, 0.0745098, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7sx0u"]
+material = SubResource("StandardMaterial3D_4ssft")
+size = Vector3(0.2, 0.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hn6fc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i0dpw"]
+material = SubResource("StandardMaterial3D_hn6fc")
+size = Vector3(0.2, 0.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fvsf"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6mode"]
+material = SubResource("StandardMaterial3D_8fvsf")
+size = Vector3(0.2, 0.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1poxr"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ss1df"]
+material = SubResource("StandardMaterial3D_1poxr")
+size = Vector3(0.2, 0.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrlye"]
+albedo_color = Color(0.299547, 0.299547, 0.299547, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k7yt5"]
+material = SubResource("StandardMaterial3D_qrlye")
+size = Vector3(0.2, 0.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rhhc"]
+albedo_color = Color(0.709804, 0.396078, 0.113725, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wnlg3"]
+material = SubResource("StandardMaterial3D_2rhhc")
+size = Vector3(0.2, 0.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ifl5"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mmtbd"]
+material = SubResource("StandardMaterial3D_3ifl5")
+size = Vector3(0.2, 0.2, 0.1)
+
 [node name="GrowTree" type="Node3D"]
 script = ExtResource("1_bmqap")
+
+[node name="TreeBasic1" type="Node3D" parent="."]
+
+[node name="TreeBasic1MeshInstance3D" type="MeshInstance3D" parent="TreeBasic1"]
+mesh = SubResource("CapsuleMesh_4ssft")
+skeleton = NodePath("../..")
+
+[node name="TreeScience1" type="Node3D" parent="."]
+visible = false
+
+[node name="TreeScience1MeshInstance3D" type="MeshInstance3D" parent="TreeScience1"]
+mesh = SubResource("CapsuleMesh_bmqap")
+skeleton = NodePath("../..")
+
+[node name="TreeMagic1" type="Node3D" parent="."]
+visible = false
+
+[node name="TreeMagic1MeshInstance3D" type="MeshInstance3D" parent="TreeMagic1"]
+mesh = SubResource("CapsuleMesh_hn6fc")
+skeleton = NodePath("../..")
+
+[node name="TreeScience2" type="Node3D" parent="."]
+visible = false
+
+[node name="TreeScience2MeshInstance3D" type="MeshInstance3D" parent="TreeScience2"]
+mesh = SubResource("CapsuleMesh_i0dpw")
+skeleton = NodePath("../..")
+
+[node name="TreeBasic2" type="Node3D" parent="."]
+visible = false
+
+[node name="TreeBasic2MeshInstance3D" type="MeshInstance3D" parent="TreeBasic2"]
+mesh = SubResource("CapsuleMesh_8fvsf")
+skeleton = NodePath("../..")
+
+[node name="TreeMagic2" type="Node3D" parent="."]
+visible = false
+
+[node name="TreeMagic2MeshInstance3D" type="MeshInstance3D" parent="TreeMagic2"]
+mesh = SubResource("CapsuleMesh_6mode")
+skeleton = NodePath("../..")
+
+[node name="TreeScience3" type="Node3D" parent="."]
+visible = false
+
+[node name="TreeScience3MeshInstance3D" type="MeshInstance3D" parent="TreeScience3"]
+mesh = SubResource("CapsuleMesh_1poxr")
+skeleton = NodePath("../..")
+
+[node name="TreeBasic3" type="Node3D" parent="."]
+visible = false
+
+[node name="TreeBasic3MeshInstance3D" type="MeshInstance3D" parent="TreeBasic3"]
+mesh = SubResource("CapsuleMesh_ss1df")
+skeleton = NodePath("../../TreeBasic2/TreeBasic2MeshInstance3D")
+
+[node name="TreeMagic3" type="Node3D" parent="."]
+visible = false
+
+[node name="TreeMagic3MeshInstance3D" type="MeshInstance3D" parent="TreeMagic3"]
+mesh = SubResource("CapsuleMesh_qrlye")
+skeleton = NodePath("../..")
+
+[node name="ToolBar" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55463, 0.618334, 1.40859)
+
+[node name="ToolBarMeshInstance3D" type="MeshInstance3D" parent="ToolBar"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 0, 0, 0)
+mesh = SubResource("QuadMesh_bmqap")
+skeleton = NodePath("")
+
+[node name="Oiseau" type="Node3D" parent="ToolBar"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, -5.91278e-05, 0, 0.2)
+
+[node name="OiseauMeshInstance3D" type="MeshInstance3D" parent="ToolBar/Oiseau"]
+mesh = SubResource("BoxMesh_spcsk")
+skeleton = NodePath("../../ToolBarMeshInstance3D")
+
+[node name="OiseauStaticBody3D" type="StaticBody3D" parent="ToolBar/Oiseau"]
+
+[node name="OiseauCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Oiseau/OiseauStaticBody3D"]
+shape = SubResource("BoxShape3D_bmqap")
+
+[node name="Engrais" type="Node3D" parent="ToolBar"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 5.91278e-05, 0, -0.2)
+
+[node name="EngraisMeshInstance3D" type="MeshInstance3D" parent="ToolBar/Engrais"]
+mesh = SubResource("BoxMesh_7sx0u")
+skeleton = NodePath("../../ToolBarMeshInstance3D")
+
+[node name="EngraisStaticBody3D" type="StaticBody3D" parent="ToolBar/Engrais"]
+
+[node name="EngraisCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Engrais/EngraisStaticBody3D"]
+shape = SubResource("BoxShape3D_bmqap")
+
+[node name="Peinture" type="Node3D" parent="ToolBar"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, -5.91278e-05, 0, 0.2)
+visible = false
+
+[node name="PeintureMeshInstance3D" type="MeshInstance3D" parent="ToolBar/Peinture"]
+mesh = SubResource("BoxMesh_i0dpw")
+skeleton = NodePath("../../ToolBarMeshInstance3D")
+
+[node name="PeintureStaticBody3D" type="StaticBody3D" parent="ToolBar/Peinture"]
+
+[node name="PeintureCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Peinture/PeintureStaticBody3D"]
+shape = SubResource("BoxShape3D_bmqap")
+
+[node name="Livre" type="Node3D" parent="ToolBar"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 5.91278e-05, 0, -0.2)
+visible = false
+
+[node name="LivreMeshInstance3D" type="MeshInstance3D" parent="ToolBar/Livre"]
+mesh = SubResource("BoxMesh_6mode")
+skeleton = NodePath("../../ToolBarMeshInstance3D")
+
+[node name="LivreStaticBody3D" type="StaticBody3D" parent="ToolBar/Livre"]
+
+[node name="LivreCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Livre/LivreStaticBody3D"]
+shape = SubResource("BoxShape3D_bmqap")
+
+[node name="Briquet" type="Node3D" parent="ToolBar"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, -0.00017786, 0, 0.6)
+visible = false
+
+[node name="BriquetMeshInstance3D" type="MeshInstance3D" parent="ToolBar/Briquet"]
+mesh = SubResource("BoxMesh_ss1df")
+skeleton = NodePath("../../ToolBarMeshInstance3D")
+
+[node name="BriquetStaticBody3D" type="StaticBody3D" parent="ToolBar/Briquet"]
+
+[node name="BriquetCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Briquet/BriquetStaticBody3D"]
+shape = SubResource("BoxShape3D_bmqap")
+
+[node name="BarDeFer" type="Node3D" parent="ToolBar"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, -5.91278e-05, 0, 0.2)
+visible = false
+
+[node name="BarDeFerMeshInstance3D" type="MeshInstance3D" parent="ToolBar/BarDeFer"]
+mesh = SubResource("BoxMesh_k7yt5")
+skeleton = NodePath("../../ToolBarMeshInstance3D")
+
+[node name="BarDeFerStaticBody3D" type="StaticBody3D" parent="ToolBar/BarDeFer"]
+
+[node name="BarDeFerCollisionShape3D" type="CollisionShape3D" parent="ToolBar/BarDeFer/BarDeFerStaticBody3D"]
+shape = SubResource("BoxShape3D_bmqap")
+
+[node name="FeuilleMorte" type="Node3D" parent="ToolBar"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 5.91278e-05, 0, -0.2)
+visible = false
+
+[node name="FeuilleMorteMeshInstance3D" type="MeshInstance3D" parent="ToolBar/FeuilleMorte"]
+mesh = SubResource("BoxMesh_wnlg3")
+skeleton = NodePath("../../ToolBarMeshInstance3D")
+
+[node name="FeuilleMorteStaticBody3D" type="StaticBody3D" parent="ToolBar/FeuilleMorte"]
+
+[node name="FeuilleMorteCollisionShape3D" type="CollisionShape3D" parent="ToolBar/FeuilleMorte/FeuilleMorteStaticBody3D"]
+shape = SubResource("BoxShape3D_bmqap")
+
+[node name="Lunettes" type="Node3D" parent="ToolBar"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 0.00017786, 0, -0.6)
+visible = false
+
+[node name="LunettesMeshInstance3D" type="MeshInstance3D" parent="ToolBar/Lunettes"]
+mesh = SubResource("BoxMesh_mmtbd")
+skeleton = NodePath("../../ToolBarMeshInstance3D")
+
+[node name="LunettesStaticBody3D" type="StaticBody3D" parent="ToolBar/Lunettes"]
+
+[node name="LunettesCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Lunettes/LunettesStaticBody3D"]
+shape = SubResource("BoxShape3D_bmqap")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.0105241, 0, 0.999945, 0, 1, 0, -0.999945, 0, -0.0105241, 4.92089, 0.588707, 0.534319)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63441, 0, -1.90093)
+
+[connection signal="input_event" from="ToolBar/Oiseau/OiseauStaticBody3D" to="." method="_on_oiseau_static_body_3d_input_event"]
+[connection signal="input_event" from="ToolBar/Engrais/EngraisStaticBody3D" to="." method="_on_engrais_static_body_3d_input_event"]
+[connection signal="input_event" from="ToolBar/Peinture/PeintureStaticBody3D" to="." method="_on_peinture_static_body_3d_input_event"]
+[connection signal="input_event" from="ToolBar/Livre/LivreStaticBody3D" to="." method="_on_livre_static_body_3d_input_event"]
+[connection signal="input_event" from="ToolBar/Briquet/BriquetStaticBody3D" to="." method="_on_briquet_static_body_3d_input_event"]
+[connection signal="input_event" from="ToolBar/BarDeFer/BarDeFerStaticBody3D" to="." method="_on_bar_de_fer_static_body_3d_input_event"]
+[connection signal="input_event" from="ToolBar/FeuilleMorte/FeuilleMorteStaticBody3D" to="." method="_on_feuille_morte_static_body_3d_input_event"]
+[connection signal="input_event" from="ToolBar/Lunettes/LunettesStaticBody3D" to="." method="_on_lunettes_static_body_3d_input_event"]
