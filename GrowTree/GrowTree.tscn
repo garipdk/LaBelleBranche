@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://coe6hqacb5mji"]
+[gd_scene load_steps=2 format=3 uid="uid://coe6hqacb5mji"]
+
+[ext_resource type="Script" uid="uid://y4fuijfll6vg" path="res://GrowTree/grow_tree.gd" id="1_bmqap"]
 
 [node name="GrowTree" type="Node3D"]
+script = ExtResource("1_bmqap")
