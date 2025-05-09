@@ -1,7 +1,6 @@
 extends Camera3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var background: Sprite3D = $"../Background"
 
 func _on_ready() -> void:
 	pass

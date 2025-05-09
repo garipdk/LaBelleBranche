@@ -12,7 +12,6 @@ signal turn
 func _ready() -> void:
 	label_3d.text = text
 	sprite_3d.texture = texture
-	label_3d.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	
 func _on_input_event(
 	camera: Node,
