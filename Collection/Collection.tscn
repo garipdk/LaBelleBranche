@@ -1,3 +1,36 @@
-[gd_scene format=3 uid="uid://dmjaohtonc7be"]
+[gd_scene load_steps=6 format=3 uid="uid://dmjaohtonc7be"]
+
+[ext_resource type="Script" uid="uid://cqxriopbnkggq" path="res://Collection/collection.gd" id="1_bwq0v"]
+[ext_resource type="Texture2D" uid="uid://c4a0iky6epovy" path="res://icon.svg" id="1_vutfg"]
+[ext_resource type="PackedScene" uid="uid://djl1ak8hvc2rf" path="res://Collection/Shelf.tscn" id="2_tc5um"]
+[ext_resource type="PackedScene" uid="uid://btj3cp0bhn1a0" path="res://Collection/Pot.tscn" id="3_d7vp7"]
+
+[sub_resource type="Environment" id="Environment_h4x0n"]
+background_mode = 3
+ambient_light_source = 3
 
 [node name="Collection" type="Node3D"]
+script = ExtResource("1_bwq0v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.750504, -0.584051, 0.309239, -1.22509e-08, 0.46793, 0.883766, -0.660867, -0.663269, 0.351183, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.991899)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h4x0n")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="WorldEnvironment"]
+layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="WorldEnvironment/CanvasLayer"]
+position = Vector2(576, 324)
+scale = Vector2(9, 5.0625)
+texture = ExtResource("1_vutfg")
+
+[node name="Shelf" parent="." instance=ExtResource("2_tc5um")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+
+[node name="Pot" parent="." instance=ExtResource("3_d7vp7")]
