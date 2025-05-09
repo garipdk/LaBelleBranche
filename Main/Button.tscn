@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://da25w22xck8hd"]
+
+[ext_resource type="Script" uid="uid://cv52j4ctu46a4" path="res://Main/scripts/button.gd" id="1_8nbg0"]
+[ext_resource type="Texture2D" uid="uid://cov0bsatpx0kx" path="res://Assets/icon.svg" id="2_8nbg0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8nbg0"]
+size = Vector3(3, 1, 1)
+
+[node name="Button" type="StaticBody3D"]
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+script = ExtResource("1_8nbg0")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+render_priority = 1
+texture = ExtResource("2_8nbg0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00931644, -2.98023e-08, -0.000219226)
+shape = SubResource("BoxShape3D_8nbg0")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0, 0.067)
+render_priority = 2
+outline_render_priority = 1
+text = "default text"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
