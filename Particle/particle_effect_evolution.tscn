@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://cg5mkkqu6ihjf"]
+
+[ext_resource type="Texture2D" uid="uid://bu0bqpiqlr2id" path="res://Particle/particle_sprite_smoke_from_godot.webp" id="1_m6qgl"]
+[ext_resource type="Script" uid="uid://d08xxyhfnjwf4" path="res://Particle/change_effect.gd" id="2_p163w"]
+
+[sub_resource type="Gradient" id="Gradient_fbggk"]
+offsets = PackedFloat32Array(0.00222717, 1)
+colors = PackedColorArray(1, 0.133333, 0.133333, 1, 0.218546, 0.425834, 0.945424, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6gb6g"]
+gradient = SubResource("Gradient_fbggk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tkdib"]
+lifetime_randomness = 0.5
+direction = Vector3(1, 1, 0)
+spread = 180.0
+initial_velocity_min = 0.1
+initial_velocity_max = 0.2
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -0.200002
+linear_accel_max = -0.200002
+color = Color(0.0705882, 0, 0.309804, 1)
+color_ramp = SubResource("GradientTexture1D_6gb6g")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mp071"]
+transparency = 1
+albedo_color = Color(0.811765, 0.25098, 0.141176, 1)
+albedo_texture = ExtResource("1_m6qgl")
+billboard_mode = 3
+particles_anim_h_frames = 8
+particles_anim_v_frames = 8
+particles_anim_loop = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_q1xp2"]
+material = SubResource("StandardMaterial3D_mp071")
+size = Vector2(5, 5)
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+amount = 10
+lifetime = 2.0
+explosiveness = 0.9
+randomness = 0.2
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_tkdib")
+draw_passes = 2
+draw_pass_1 = SubResource("QuadMesh_q1xp2")
+draw_pass_2 = null
+script = ExtResource("2_p163w")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 1.1091)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.544365, 0)
+light_energy = 10.0
+omni_range = 100.0
