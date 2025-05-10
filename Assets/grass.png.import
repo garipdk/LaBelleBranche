@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt5gijpnhign0"
-path.s3tc="res://.godot/imported/Oiseau_Oiseau.png-10ca8df227a354b962c2fa0053027f5e.s3tc.ctex"
+uid="uid://bpqsiv3cx5qom"
+path.s3tc="res://.godot/imported/grass.png-46bb554aade75a091da98570239d1507.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "6503736b12349f8e010f1e3596aba847"
-}
 
 [deps]
 
-source_file="res://Assets/Objets_pour_arbre/Oiseau_Oiseau.png"
-dest_files=["res://.godot/imported/Oiseau_Oiseau.png-10ca8df227a354b962c2fa0053027f5e.s3tc.ctex"]
+source_file="res://Assets/grass.png"
+dest_files=["res://.godot/imported/grass.png-46bb554aade75a091da98570239d1507.s3tc.ctex"]
 
 [params]
 

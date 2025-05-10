@@ -2,6 +2,9 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	show_collection()
+
+func show_collection() -> void:
 	var pot_dict = {
 		"emotion": $PotList/PotEmotion,
 		"rationalite": $PotList/PotRationalite,
