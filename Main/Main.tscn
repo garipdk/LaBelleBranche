@@ -242,9 +242,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2
 text = "Menu"
 
 [node name="Game_to_Collection" parent="Buttons" instance=ExtResource("1_lxy7q")]
-transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 13.3219, 0, -4)
-visible = false
+transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 13.322, 0, -2.3)
 text = "Collection"
+x_scale = 1
 
 [node name="Reset_Collection" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, 3.52266)
