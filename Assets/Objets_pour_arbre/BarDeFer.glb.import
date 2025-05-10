@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://1o8rx2b3l8d6"
-path="res://.godot/imported/Barre_de_fer.glb-08bd9a1567d1497ca00a528f0741bea9.scn"
+path="res://.godot/imported/BarDeFer.glb-a373c818970c8fe7fd4fe860a1f9934e.scn"
 
 [deps]
 
-source_file="res://Assets/Objets_pour_arbre/Barre_de_fer.glb"
-dest_files=["res://.godot/imported/Barre_de_fer.glb-08bd9a1567d1497ca00a528f0741bea9.scn"]
+source_file="res://Assets/Objets_pour_arbre/BarDeFer.glb"
+dest_files=["res://.godot/imported/BarDeFer.glb-a373c818970c8fe7fd4fe860a1f9934e.scn"]
 
 [params]
 
