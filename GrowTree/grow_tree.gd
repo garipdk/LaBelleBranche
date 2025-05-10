@@ -86,8 +86,7 @@ func play_turn(turn_object:Dictionary, played_object_str:String, played_object=n
 	else:
 		selected_objects = [played_object_str]
 	
-	for object in selected_objects:
-		applic_statistic(turn_object, object)
+	applic_statistic(turn_object, played_object_str)
 	
 	if turn_idx != turn_number - 1:
 		selected_objects = []
