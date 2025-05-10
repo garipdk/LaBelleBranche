@@ -10,6 +10,7 @@ size = Vector3(3, 1, 1)
 axis_lock_linear_y = true
 axis_lock_linear_z = true
 script = ExtResource("1_8nbg0")
+x_scale = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

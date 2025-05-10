@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://rxvrkdw32yk7"]
+[gd_scene load_steps=28 format=3 uid="uid://rxvrkdw32yk7"]
 
 [ext_resource type="PackedScene" uid="uid://da25w22xck8hd" path="res://Main/Button.tscn" id="1_lxy7q"]
 [ext_resource type="Script" uid="uid://cfkqnvgla4txh" path="res://Main/main.gd" id="1_u2i7p"]
@@ -146,11 +146,55 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_qg80j"]
+resource_name = "Main_to_Credit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.5708, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bor5n"]
+resource_name = "Credit_to_Main"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6aewd"]
 _data = {
 &"Collection_to_Main": SubResource("Animation_u2i7p"),
+&"Credit_to_Main": SubResource("Animation_bor5n"),
 &"Game_to_Collection": SubResource("Animation_hh5pf"),
 &"Main_to_Collection": SubResource("Animation_amygn"),
+&"Main_to_Credit": SubResource("Animation_qg80j"),
 &"Main_to_Game": SubResource("Animation_6aewd"),
 &"RESET": SubResource("Animation_ps1la")
 }
@@ -232,23 +276,34 @@ texture = SubResource("NoiseTexture2D_u2i7p")
 [node name="Colletion" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -6)
 text = "Collection"
+x_scale = 3
 
 [node name="Start game" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -6)
 text = "Start Game"
+x_scale = 3
 
 [node name="Collection_toMain" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, -3)
 text = "Menu"
+x_scale = 3
 
 [node name="Game_to_Collection" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 13.322, 0, -2.3)
 text = "Collection"
-x_scale = 1
 
 [node name="Reset_Collection" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, 3.52266)
 text = "Reset Collection"
+
+[node name="Credit_to_Menu" parent="Buttons" instance=ExtResource("1_lxy7q")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 6.323, -3)
+text = "Menu"
+x_scale = 3
+
+[node name="Main_to_Credit" parent="Buttons" instance=ExtResource("1_lxy7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50967, 0, -7.68148)
+text = "Credit"
 
 [node name="Texts" type="Node" parent="."]
 
@@ -321,6 +376,12 @@ text = "Bravo, tu as un magnifique arbre !
 font_size = 40
 outline_size = 20
 
+[node name="Credit" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2, 6.323, 2)
+text = "Crédits :"
+font_size = 60
+outline_size = 30
+
 [connection signal="turn" from="Buttons/Colletion" to="Camera3D" method="_on_colletion_turn_collection"]
 [connection signal="turn" from="Buttons/Start game" to="." method="_on_start_game_turn"]
 [connection signal="turn" from="Buttons/Start game" to="Camera3D" method="_on_start_game_turn_game"]
@@ -328,4 +389,6 @@ outline_size = 20
 [connection signal="turn" from="Buttons/Game_to_Collection" to="." method="_on_game_to_collection_turn"]
 [connection signal="turn" from="Buttons/Game_to_Collection" to="Camera3D" method="_on_game_to_collection_turn"]
 [connection signal="turn" from="Buttons/Reset_Collection" to="." method="_on_reset_collection_turn"]
+[connection signal="turn" from="Buttons/Credit_to_Menu" to="Camera3D" method="_on_credit_to_menu_turn"]
+[connection signal="turn" from="Buttons/Main_to_Credit" to="Camera3D" method="_on_main_to_credit_turn"]
 [connection signal="game_finished" from="GrowTree" to="." method="_on_grow_tree_game_finished"]

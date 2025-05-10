@@ -21,8 +21,12 @@ func _ready() -> void:
 	self.texture_height = texture.get_height()
 	self.texture_width = texture.get_width()
 	self.width_on_height_ratio  = self.texture_width/self.texture_height
+	var shape = BoxShape3D.new()
+	shape.size = Vector3(x_scale*width_on_height_ratio,1,1)
+	collision_shape_3d.set_shape(shape)
 	sprite_3d.scale = Vector3(x_scale*width_on_height_ratio,1,1)
-	collision_shape_3d.shape.size = Vector3(x_scale*width_on_height_ratio,1,1)
+
+
 	
 	
 func _on_input_event(
