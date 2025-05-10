@@ -37,6 +37,7 @@ var lunettes_str = "lunettes"
 @onready var particles_turn_2 = $GPUParticles3DTurn2
 @onready var timer = $Timer
 
+var is_timer_finished:bool = true
 var selected_objects:Array
 var all_objects:Array
 var all_trees:Array
@@ -94,42 +95,50 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
+func restart_game():
+	turn_idx = 0
+	make_invisible(all_trees)
+	make_invisible(all_objects)
+	tree_basic_0.visible = true
+	oiseau.visible = true
+	engrais.visible = true
+	
 func play_turn(turn_object:Dictionary, played_object_str:String, played_object=null):
-	current_turn_object = turn_object
-	if turn_idx == turn_number - 1:
-		if selected_objects.is_empty():
-			selected_objects.append(played_object_str)
-			played_object.visible = false
-		else:
-			selected_objects.append(played_object_str)
-			played_object = null
-	else:
-		selected_objects = [played_object_str]
 	
-	applic_statistic(turn_object, played_object_str)
+	if played_object != null:
+		played_object.visible = false
 	
-	if turn_idx != turn_number - 1:
-		selected_objects = []
-	if played_object == null :
-		next_turn(turn_object)
-		turn_idx += 1
-	if turn_idx == turn_number:
-		if statistic_science_magic > 0:
-			Save.save_tree_win("emotion")
-		elif statistic_science_magic < 0:
-			Save.save_tree_win("rationalite")
+	if is_timer_finished:
+		current_turn_object = turn_object
+		if turn_idx == turn_number - 1:
+			if selected_objects.is_empty():
+				selected_objects.append(played_object_str)
+			else:
+				selected_objects.append(played_object_str)
+				played_object = null
 		else:
-			Save.save_tree_win("multifruit")
-		game_finished.emit()
+			selected_objects = [played_object_str]
+		
+		applic_statistic(turn_object, played_object_str)
+		
+		if turn_idx != turn_number - 1:
+			selected_objects = []
+		if played_object == null :
+			next_turn(turn_object)
+			turn_idx += 1
+		if turn_idx == turn_number:
+			if statistic_science_magic > 0:
+				Save.save_tree_win("emotion")
+			elif statistic_science_magic < 0:
+				Save.save_tree_win("rationalite")
+			else:
+				Save.save_tree_win("multifruit")
+			game_finished.emit()
 	
 func applic_statistic(turn_object:Dictionary, played_object:String):
 	statistic_science_magic += turn_object[played_object] * object_point
 
 func next_turn(turn_object:Dictionary):
-	make_invisible(all_objects)
-	for object in turn_object["next_objects"]:
-		object.visible = true
 	
 	var particles = all_turn_particles[turn_idx]
 	
@@ -142,6 +151,7 @@ func next_turn(turn_object:Dictionary):
 	else:
 		particles.change_color(particles.Type.NEUTRAL)
 		particles.emitting = true
+	is_timer_finished = false
 	timer.start()
 
 func make_invisible(things:Array):
@@ -190,6 +200,7 @@ func _on_lunettes_static_body_3d_input_event(camera: Node, event: InputEvent, ev
 
 
 func _on_timer_timeout() -> void:
+	is_timer_finished = true
 	make_invisible(all_trees)
 	if statistic_science_magic > 0:
 		current_turn_object["next_trees"]["magic"].visible = true
@@ -197,3 +208,6 @@ func _on_timer_timeout() -> void:
 		current_turn_object["next_trees"]["science"].visible = true
 	else:
 		current_turn_object["next_trees"]["basic"].visible = true
+	make_invisible(all_objects)
+	for object in current_turn_object["next_objects"]:
+		object.visible = true
