@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ck152rmu0mu6g"
-path="res://.godot/imported/Neutral_Mid_Tree.glb-2dd1c072e9803b68cf8b09107f426088.scn"
+path="res://.godot/imported/TreeBasic2.glb-cf14d3e85164532b811b66257736e23a.scn"
 
 [deps]
 
-source_file="res://Assets/3D Models/Arbres/Neutral_Mid/Neutral_Mid_Tree.glb"
-dest_files=["res://.godot/imported/Neutral_Mid_Tree.glb-2dd1c072e9803b68cf8b09107f426088.scn"]
+source_file="res://Assets/3D Models/Arbres/Neutral_Mid/TreeBasic2.glb"
+dest_files=["res://.godot/imported/TreeBasic2.glb-cf14d3e85164532b811b66257736e23a.scn"]
 
 [params]
 
