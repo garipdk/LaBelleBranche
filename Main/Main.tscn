@@ -152,6 +152,7 @@ texture = SubResource("NoiseTexture2D_u2i7p")
 
 [node name="GrowTree" parent="." instance=ExtResource("3_amygn")]
 transform = Transform3D(-1.2, 0, -1.81195e-07, 0, 1.2, 0, 1.81195e-07, 0, -1.2, 15, 0, 0)
+turn_number = null
 
 [node name="Light" type="Node" parent="."]
 
