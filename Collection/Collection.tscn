@@ -17,7 +17,7 @@ transform = Transform3D(0.750504, -0.584051, 0.309239, -1.22509e-08, 0.46793, 0.
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.991899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.428985, 2.32653)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_h4x0n")
@@ -33,4 +33,13 @@ texture = ExtResource("1_vutfg")
 [node name="Shelf" parent="." instance=ExtResource("2_tc5um")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
 
-[node name="Pot" parent="." instance=ExtResource("3_d7vp7")]
+[node name="PotList" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.265997, 0)
+
+[node name="PotEmotion" parent="PotList" instance=ExtResource("3_d7vp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54953, 0, 0)
+
+[node name="PotRationalite" parent="PotList" instance=ExtResource("3_d7vp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52686, 0, 0)
+
+[node name="PotMultifruit" parent="PotList" instance=ExtResource("3_d7vp7")]
