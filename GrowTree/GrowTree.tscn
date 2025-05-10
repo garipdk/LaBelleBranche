@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cg5mkkqu6ihjf" path="res://Particle/particle_effect_evolution.tscn" id="2_spcsk"]
 [ext_resource type="PackedScene" uid="uid://1o8rx2b3l8d6" path="res://Assets/Objets_pour_arbre/BarDeFer.glb" id="3_7sx0u"]
 [ext_resource type="PackedScene" uid="uid://cbqwsgemsd7ck" path="res://Assets/Objets_pour_arbre/Oiseau.glb" id="4_i0dpw"]
+[ext_resource type="PackedScene" uid="uid://b8xalrfy4uwvy" path="res://Assets/3D Models/Arbres/Rational_final/TreeScience3.glb" id="4_ss1df"]
 [ext_resource type="PackedScene" uid="uid://dqh3oxh1d8243" path="res://Assets/Objets_pour_arbre/Engrais.glb" id="5_1poxr"]
 [ext_resource type="PackedScene" uid="uid://cesp8i745jycs" path="res://Assets/Objets_pour_arbre/Peinture.glb" id="6_ss1df"]
 [ext_resource type="PackedScene" uid="uid://d2sxl71khn6v0" path="res://Assets/Objets_pour_arbre/Lunettes.glb" id="9_qrlye"]
@@ -39,11 +40,6 @@ material = SubResource("StandardMaterial3D_7sx0u")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6mode"]
 material = SubResource("StandardMaterial3D_i0dpw")
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_1poxr"]
-material = SubResource("StandardMaterial3D_7sx0u")
-radius = 1.0
-height = 4.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ss1df"]
 material = SubResource("StandardMaterial3D_spcsk")
@@ -135,12 +131,9 @@ visible = false
 mesh = SubResource("CapsuleMesh_6mode")
 skeleton = NodePath("../..")
 
-[node name="TreeScience3" type="Node3D" parent="."]
+[node name="TreeScience3" parent="." instance=ExtResource("4_ss1df")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.76894, 0)
 visible = false
-
-[node name="TreeScience3MeshInstance3D" type="MeshInstance3D" parent="TreeScience3"]
-mesh = SubResource("CapsuleMesh_1poxr")
-skeleton = NodePath("../..")
 
 [node name="TreeBasic3" type="Node3D" parent="."]
 visible = false
@@ -278,6 +271,7 @@ one_shot = true
 [connection signal="input_event" from="ToolBar/Lunettes/LunettesStaticBody3D" to="." method="_on_lunettes_static_body_3d_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
+[editable path="TreeScience3"]
 [editable path="ToolBar/Oiseau"]
 [editable path="ToolBar/Engrais"]
 [editable path="ToolBar/Peinture"]

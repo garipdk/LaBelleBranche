@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b8xalrfy4uwvy"
-path="res://.godot/imported/Mecha_Final_Tree.glb-1a6871d32477a409ad359f69ba2e44dc.scn"
+path="res://.godot/imported/TreeScience3.glb-853f0f3ccade10b13680a91a5e93030e.scn"
 
 [deps]
 
-source_file="res://Assets/3D Models/Arbres/Rational_final/Mecha_Final_Tree.glb"
-dest_files=["res://.godot/imported/Mecha_Final_Tree.glb-1a6871d32477a409ad359f69ba2e44dc.scn"]
+source_file="res://Assets/3D Models/Arbres/Rational_final/TreeScience3.glb"
+dest_files=["res://.godot/imported/TreeScience3.glb-853f0f3ccade10b13680a91a5e93030e.scn"]
 
 [params]
 
