@@ -38,6 +38,7 @@ material = SubResource("StandardMaterial3D_mp071")
 size = Vector2(5, 5)
 
 [node name="GPUParticles3D" type="GPUParticles3D"]
+emitting = false
 amount = 10
 lifetime = 2.0
 explosiveness = 0.9
@@ -51,8 +52,3 @@ script = ExtResource("2_p163w")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 1.1091)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.544365, 0)
-light_energy = 10.0
-omni_range = 100.0
