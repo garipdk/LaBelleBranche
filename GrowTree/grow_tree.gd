@@ -31,13 +31,21 @@ var lunettes_str = "lunettes"
 @onready var tree_basic_3 = $TreeBasic3
 @onready var tree_magic_3 = $TreeMagic3
 
+@onready var particles_turn_0 = $GPUParticles3DTurn0
+@onready var particles_turn_1 = $GPUParticles3DTurn1
+@onready var particles_turn_2 = $GPUParticles3DTurn2
+@onready var timer = $Timer
+
 var selected_objects:Array
 var all_objects:Array
 var all_trees:Array
 var all_turn_objects:Array
+var all_turn_particles:Array
 
 var statistic_science_magic:int = 0
 var object_point:int = 10
+
+var current_turn_object:Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -45,12 +53,19 @@ func _ready() -> void:
 	all_trees = [tree_basic_1, tree_science_1, tree_magic_1,\
 				 tree_science_2, tree_basic_2, tree_magic_2,\
 				 tree_science_3, tree_basic_3, tree_magic_3]
+	all_turn_particles = [particles_turn_0,particles_turn_1, particles_turn_2]
 	for object in all_objects:
 		if not object.is_node_ready():
 			await object.ready
 	for object in all_trees:
 		if not object.is_node_ready():
 			await object.ready
+	for object in all_turn_particles:
+		if not object.is_node_ready():
+			await object.ready
+	
+	if not timer.is_node_ready():
+		await timer.ready
 	all_turn_objects.resize(3)
 	all_turn_objects[0] = {"oiseau" : 1,
 							"engrais" : -1,
@@ -79,6 +94,7 @@ func _process(delta: float) -> void:
 	pass
 
 func play_turn(turn_object:Dictionary, played_object_str:String, played_object=null):
+	current_turn_object = turn_object
 	if turn_idx == turn_number - 1:
 		if selected_objects.is_empty():
 			selected_objects.append(played_object_str)
@@ -109,18 +125,22 @@ func applic_statistic(turn_object:Dictionary, played_object:String):
 
 func next_turn(turn_object:Dictionary):
 	make_invisible(all_objects)
-	make_invisible(all_trees)
 	for object in turn_object["next_objects"]:
 		object.visible = true
 	
-	if statistic_science_magic > 0:
-		turn_object["next_trees"]["magic"].visible = true
-	elif statistic_science_magic < 0:
-		turn_object["next_trees"]["science"].visible = true
-	else:
-		turn_object["next_trees"]["basic"].visible = true
-		
+	var particles = all_turn_particles[turn_idx]
 	
+	if statistic_science_magic > 0:
+		particles.change_color(particles.Type.EMOTIONAL)
+		particles.emitting = true
+	elif statistic_science_magic < 0:
+		particles.change_color(particles.Type.SCIENCE)
+		particles.emitting = true
+	else:
+		particles.change_color(particles.Type.NEUTRAL)
+		particles.emitting = true
+	timer.start()
+
 func make_invisible(things:Array):
 	for thing in things:
 		thing.visible = false
@@ -164,3 +184,13 @@ func _on_feuille_morte_static_body_3d_input_event(camera: Node, event: InputEven
 func _on_lunettes_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		play_turn(all_turn_objects[turn_idx], lunettes_str, lunettes)
+
+
+func _on_timer_timeout() -> void:
+	make_invisible(all_trees)
+	if statistic_science_magic > 0:
+		current_turn_object["next_trees"]["magic"].visible = true
+	elif statistic_science_magic < 0:
+		current_turn_object["next_trees"]["science"].visible = true
+	else:
+		current_turn_object["next_trees"]["basic"].visible = true

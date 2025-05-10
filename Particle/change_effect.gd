@@ -6,11 +6,9 @@ enum Type {
 	EMOTIONAL,
 }
 
-@export var type : Type
-
 var material: Material
 
-func _ready() -> void:
+func change_color(type:Type) -> void:
 	material = self.draw_pass_1.surface_get_material(0)
 	match type:
 		Type.SCIENCE:
