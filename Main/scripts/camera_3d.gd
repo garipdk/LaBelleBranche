@@ -2,7 +2,7 @@ extends Camera3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-func _on_ready() -> void:
+func _ready() -> void:
 	pass
 
 

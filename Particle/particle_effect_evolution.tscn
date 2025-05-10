@@ -35,17 +35,24 @@ particles_anim_loop = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_q1xp2"]
 material = SubResource("StandardMaterial3D_mp071")
-size = Vector2(0.1, 0.1)
+size = Vector2(5, 5)
 
 [node name="GPUParticles3D" type="GPUParticles3D"]
-amount = 20
+amount = 10
 lifetime = 2.0
 explosiveness = 0.9
 randomness = 0.2
 trail_lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_tkdib")
+draw_passes = 2
 draw_pass_1 = SubResource("QuadMesh_q1xp2")
+draw_pass_2 = null
 script = ExtResource("2_p163w")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 1.1091)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.544365, 0)
+light_energy = 10.0
+omni_range = 100.0

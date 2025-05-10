@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://coe6hqacb5mji"]
+[gd_scene load_steps=33 format=3 uid="uid://coe6hqacb5mji"]
 
 [ext_resource type="Script" uid="uid://y4fuijfll6vg" path="res://GrowTree/grow_tree.gd" id="1_bmqap"]
+[ext_resource type="PackedScene" uid="uid://cg5mkkqu6ihjf" path="res://Particle/particle_effect_evolution.tscn" id="2_spcsk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spcsk"]
 albedo_color = Color(0, 1, 0, 1)
@@ -113,6 +114,12 @@ size = Vector3(0.2, 0.2, 0.1)
 
 [node name="GrowTree" type="Node3D"]
 script = ExtResource("1_bmqap")
+
+[node name="GPUParticles3D" parent="." instance=ExtResource("2_spcsk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75611, 0, 0)
+emitting = false
+one_shot = true
+type = 1
 
 [node name="TreeBasic1" type="Node3D" parent="."]
 
