@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://coe6hqacb5mji"]
+[gd_scene load_steps=25 format=3 uid="uid://coe6hqacb5mji"]
 
 [ext_resource type="Script" uid="uid://y4fuijfll6vg" path="res://GrowTree/grow_tree.gd" id="1_bmqap"]
 [ext_resource type="PackedScene" uid="uid://7mjhpjm2lsct" path="res://Assets/Objets_pour_arbre/Briquet.glb" id="2_4ssft"]
@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://b8xalrfy4uwvy" path="res://Assets/3D Models/Arbres/Rational_final/TreeScience3.glb" id="4_ss1df"]
 [ext_resource type="PackedScene" uid="uid://dqh3oxh1d8243" path="res://Assets/Objets_pour_arbre/Engrais.glb" id="5_1poxr"]
 [ext_resource type="PackedScene" uid="uid://cesp8i745jycs" path="res://Assets/Objets_pour_arbre/Peinture.glb" id="6_ss1df"]
+[ext_resource type="PackedScene" uid="uid://b321hyjree2ix" path="res://Assets/Objets_pour_arbre/Livre.glb" id="8_k7yt5"]
 [ext_resource type="PackedScene" uid="uid://d2sxl71khn6v0" path="res://Assets/Objets_pour_arbre/Lunettes.glb" id="9_qrlye"]
+[ext_resource type="PackedScene" uid="uid://bwk0ghfsgmhdv" path="res://Assets/Objets_pour_arbre/FeuilleMorte.glb" id="11_2rhhc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spcsk"]
 albedo_color = Color(0, 1, 0, 1)
@@ -56,20 +58,6 @@ size = Vector2(1.6, 0.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bmqap"]
 size = Vector3(0.2, 0.2, 0.16)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fvsf"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_6mode"]
-material = SubResource("StandardMaterial3D_8fvsf")
-size = Vector3(0.2, 0.2, 0.1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rhhc"]
-albedo_color = Color(0.709804, 0.396078, 0.113725, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_wnlg3"]
-material = SubResource("StandardMaterial3D_2rhhc")
-size = Vector3(0.2, 0.2, 0.1)
 
 [node name="GrowTree" type="Node3D"]
 script = ExtResource("1_bmqap")
@@ -194,27 +182,28 @@ transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 0, 0.067
 [node name="PeintureCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Peinture/PeintureStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
 
-[node name="Livre" type="Node3D" parent="ToolBar"]
-transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 5.91278e-05, 0, -0.2)
+[node name="Livre" parent="ToolBar" instance=ExtResource("8_k7yt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.91278e-05, 0, -0.2)
 visible = false
 
-[node name="LivreMeshInstance3D" type="MeshInstance3D" parent="ToolBar/Livre"]
-mesh = SubResource("BoxMesh_6mode")
-skeleton = NodePath("../../ToolBarMeshInstance3D")
+[node name="Livre" parent="ToolBar/Livre" index="0"]
+transform = Transform3D(0.999056, 0.043445, 0, 0.0434441, -0.999034, 0.006667, 0.000289648, -0.00666071, -0.999978, 0.0384228, 0.0943504, 0)
 
 [node name="LivreStaticBody3D" type="StaticBody3D" parent="ToolBar/Livre"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 0, 0.0313809, 0)
 
 [node name="LivreCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Livre/LivreStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
 
 [node name="Briquet" parent="ToolBar" instance=ExtResource("2_4ssft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0246654, 0.6)
 visible = false
 
 [node name="Briquet" parent="ToolBar/Briquet" index="0"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.0835716, 0.580214)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.084, 0)
 
 [node name="BriquetStaticBody3D" type="StaticBody3D" parent="ToolBar/Briquet"]
-transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, -0.00017786, 0, 0.6)
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 0, 0, 0)
 
 [node name="BriquetCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Briquet/BriquetStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
@@ -224,7 +213,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
 visible = false
 
 [node name="Barre de fer" parent="ToolBar/BarDeFer" index="0"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.114307, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.0872648, 0)
 
 [node name="BarDeFerStaticBody3D" type="StaticBody3D" parent="ToolBar/BarDeFer"]
 transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, -5.91278e-05, 0, 0)
@@ -232,21 +221,21 @@ transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, -5.91278
 [node name="BarDeFerCollisionShape3D" type="CollisionShape3D" parent="ToolBar/BarDeFer/BarDeFerStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
 
-[node name="FeuilleMorte" type="Node3D" parent="ToolBar"]
-transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 5.91278e-05, 0, -0.2)
+[node name="FeuilleMorte" parent="ToolBar" instance=ExtResource("11_2rhhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
 visible = false
 
-[node name="FeuilleMorteMeshInstance3D" type="MeshInstance3D" parent="ToolBar/FeuilleMorte"]
-mesh = SubResource("BoxMesh_wnlg3")
-skeleton = NodePath("../../ToolBarMeshInstance3D")
+[node name="FeuilleMorte" parent="ToolBar/FeuilleMorte" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0215125, -0.0145298, 0)
 
 [node name="FeuilleMorteStaticBody3D" type="StaticBody3D" parent="ToolBar/FeuilleMorte"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 0, 0.0228766, 0)
 
 [node name="FeuilleMorteCollisionShape3D" type="CollisionShape3D" parent="ToolBar/FeuilleMorte/FeuilleMorteStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
 
 [node name="Lunettes" parent="ToolBar" instance=ExtResource("9_qrlye")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0376416, -0.6)
 visible = false
 
 [node name="Lunettes" parent="ToolBar/Lunettes" index="0"]
@@ -275,6 +264,8 @@ one_shot = true
 [editable path="ToolBar/Oiseau"]
 [editable path="ToolBar/Engrais"]
 [editable path="ToolBar/Peinture"]
+[editable path="ToolBar/Livre"]
 [editable path="ToolBar/Briquet"]
 [editable path="ToolBar/BarDeFer"]
+[editable path="ToolBar/FeuilleMorte"]
 [editable path="ToolBar/Lunettes"]
