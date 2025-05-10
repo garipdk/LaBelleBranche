@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt5gijpnhign0"
-path.s3tc="res://.godot/imported/Oiseau_Oiseau.png-10ca8df227a354b962c2fa0053027f5e.s3tc.ctex"
+uid="uid://c3tbhannx200w"
+path.s3tc="res://.godot/imported/Engrais_Engrais.png-65b691657f028b3ffa797d37a4ed07d4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "6503736b12349f8e010f1e3596aba847"
+"md5": "9b3fa7cddb439ee04dca9b5b101fa7e1"
 }
 
 [deps]
 
-source_file="res://Assets/Objets_pour_arbre/Oiseau_Oiseau.png"
-dest_files=["res://.godot/imported/Oiseau_Oiseau.png-10ca8df227a354b962c2fa0053027f5e.s3tc.ctex"]
+source_file="res://Assets/Objets_pour_arbre/Engrais_Engrais.png"
+dest_files=["res://.godot/imported/Engrais_Engrais.png-65b691657f028b3ffa797d37a4ed07d4.s3tc.ctex"]
 
 [params]
 
