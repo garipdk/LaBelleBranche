@@ -33,6 +33,7 @@ texture = ExtResource("1_vutfg")
 [node name="Shelf" parent="." instance=ExtResource("2_tc5um")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
 
+<<<<<<< HEAD
 [node name="PotList" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.265997, 0)
 
@@ -43,3 +44,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54953, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52686, 0, 0)
 
 [node name="PotMultifruit" parent="PotList" instance=ExtResource("3_d7vp7")]
+=======
+[node name="Pot" parent="." instance=ExtResource("3_d7vp7")]
+>>>>>>> c27cef9f34af7d7ac48f5178a718f1ebbe2be8ae
