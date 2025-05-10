@@ -1,5 +1,6 @@
 extends Node3D
 
+
 var turn_idx = 0
 @export var turn_number:int = 3
 @onready var oiseau = $ToolBar/Oiseau
@@ -34,6 +35,10 @@ var selected_objects:Array
 var all_objects:Array
 var all_trees:Array
 var all_turn_objects:Array
+
+var statistic_science_magic:int = 0
+var object_point:int = 10
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	all_objects = [oiseau, engrais, peinture, livre, briquet, bar_de_fer, feuille_morte, lunettes]
@@ -68,9 +73,7 @@ func _ready() -> void:
 											"basic" : tree_basic_3,\
 											"magic" : tree_magic_3},
 							"next_objects" : []}
-
-var statistic_science_magic:int = 0
-var object_point:int = 10
+	Save.load_save()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -93,6 +96,13 @@ func play_turn(turn_object:Dictionary, played_object_str:String, played_object=n
 	if played_object == null :
 		next_turn(turn_object)
 		turn_idx += 1
+	if turn_idx == turn_number:
+		if statistic_science_magic > 0:
+			Save.save_tree_win("emotion")
+		elif statistic_science_magic < 0:
+			Save.save_tree_win("rationalite")
+		else:
+			Save.save_tree_win("multifruit")
 
 func applic_statistic(turn_object:Dictionary, played_object:String):
 	statistic_science_magic += turn_object[played_object] * object_point
