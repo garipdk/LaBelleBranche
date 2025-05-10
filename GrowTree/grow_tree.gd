@@ -96,12 +96,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 func restart_game():
+	statistic_science_magic = 0
 	turn_idx = 0
 	make_invisible(all_trees)
 	make_invisible(all_objects)
 	tree_basic_0.visible = true
 	oiseau.visible = true
 	engrais.visible = true
+	is_timer_finished = true
 	
 func play_turn(turn_object:Dictionary, played_object_str:String, played_object=null):
 	
