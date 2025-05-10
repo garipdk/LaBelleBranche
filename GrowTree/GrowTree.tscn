@@ -11,8 +11,8 @@ albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4ssft"]
 material = SubResource("StandardMaterial3D_spcsk")
-radius = 0.25
-height = 1.0
+radius = 0.125
+height = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7sx0u"]
 albedo_color = Color(0.252028, 0.252028, 0.252028, 1)
@@ -116,7 +116,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75611, 0, 0)
 emitting = false
 one_shot = true
 
+[node name="TreeBasic0" type="Node3D" parent="."]
+
+[node name="TreeBasic1MeshInstance3D" type="MeshInstance3D" parent="TreeBasic0"]
+mesh = SubResource("CapsuleMesh_4ssft")
+skeleton = NodePath("../..")
+
 [node name="TreeBasic1" type="Node3D" parent="."]
+visible = false
 
 [node name="TreeBasic1MeshInstance3D" type="MeshInstance3D" parent="TreeBasic1"]
 mesh = SubResource("CapsuleMesh_4ssft")

@@ -21,6 +21,7 @@ var bar_de_fer_str = "bar_de_fer"
 var feuille_morte_str = "feuille_morte"
 var lunettes_str = "lunettes"
 
+@onready var tree_basic_0 = $TreeBasic0
 @onready var tree_basic_1 = $TreeBasic1
 @onready var tree_science_1 = $TreeScience1
 @onready var tree_magic_1 = $TreeMagic1
@@ -50,7 +51,8 @@ var current_turn_object:Dictionary
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	all_objects = [oiseau, engrais, peinture, livre, briquet, bar_de_fer, feuille_morte, lunettes]
-	all_trees = [tree_basic_1, tree_science_1, tree_magic_1,\
+	all_trees = [tree_basic_0,\
+				 tree_basic_1, tree_science_1, tree_magic_1,\
 				 tree_science_2, tree_basic_2, tree_magic_2,\
 				 tree_science_3, tree_basic_3, tree_magic_3]
 	all_turn_particles = [particles_turn_0,particles_turn_1, particles_turn_2]
@@ -69,15 +71,15 @@ func _ready() -> void:
 	all_turn_objects.resize(3)
 	all_turn_objects[0] = {"oiseau" : 1,
 							"engrais" : -1,
-							"next_trees" : { "science" : tree_science_1,\
-									"magic" : tree_magic_1},
+							"next_trees" : { "science" : tree_basic_1,\
+									"magic" : tree_basic_1},
 							"next_objects" : [peinture, livre]}
 	
 	all_turn_objects[1] = {"peinture" : 1,
 							"livre" : -1,
-							"next_trees": { "science" : tree_science_2,\
+							"next_trees": { "science" : tree_basic_2,\
 											"basic" : tree_basic_2,\
-											"magic" : tree_magic_2},
+											"magic" : tree_basic_2},
 							"next_objects" : [briquet, bar_de_fer, feuille_morte, lunettes]}
 	
 	all_turn_objects[2] = {"briquet" : 1,
