@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var game_to_collection_button = $Buttons/Game_to_Collection
+@onready var victory_label: Label3D = $VictoryLabel
 
 @onready var collection = $Collection
 @onready var grow_tree = $GrowTree
@@ -24,6 +25,7 @@ func _ready() -> void:
 
 func _on_grow_tree_game_finished() -> void:
 	game_to_collection_button.visible = true
+	victory_label.visible = true
 
 
 func _on_reset_collection_turn() -> void:
@@ -40,3 +42,4 @@ func _on_start_game_turn() -> void:
 	if is_need_reset:
 		grow_tree.restart_game()
 		is_need_reset = false
+		victory_label.visible = false

@@ -313,6 +313,14 @@ camera_attributes = SubResource("CameraAttributesPractical_bor5n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8.434, 6.572)
 mesh = SubResource("SphereMesh_bor5n")
 
+[node name="VictoryLabel" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 2, 0)
+outline_modulate = Color(0.087385, 0.0597293, 0.29421, 1)
+text = "Bravo, tu as un magnifique arbre !
+"
+font_size = 40
+outline_size = 20
+
 [connection signal="turn" from="Buttons/Colletion" to="Camera3D" method="_on_colletion_turn_collection"]
 [connection signal="turn" from="Buttons/Start game" to="." method="_on_start_game_turn"]
 [connection signal="turn" from="Buttons/Start game" to="Camera3D" method="_on_start_game_turn_game"]
