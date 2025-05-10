@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://rxvrkdw32yk7"]
+[gd_scene load_steps=18 format=3 uid="uid://rxvrkdw32yk7"]
 
 [ext_resource type="PackedScene" uid="uid://da25w22xck8hd" path="res://Main/Button.tscn" id="1_lxy7q"]
+[ext_resource type="Script" uid="uid://cfkqnvgla4txh" path="res://Main/main.gd" id="1_u2i7p"]
 [ext_resource type="Script" uid="uid://b2c8ur5b04ude" path="res://Main/scripts/camera_3d.gd" id="2_amygn"]
 [ext_resource type="Texture2D" uid="uid://bjakcpqs28to2" path="res://Assets/Wall.jpg" id="2_ps1la"]
 [ext_resource type="PackedScene" uid="uid://coe6hqacb5mji" path="res://GrowTree/GrowTree.tscn" id="3_amygn"]
@@ -175,6 +176,7 @@ material = SubResource("StandardMaterial3D_6aewd")
 size = Vector3(30, 10, 1)
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_u2i7p")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 script = ExtResource("2_amygn")
@@ -203,6 +205,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2
 
 [node name="Game_to_Collection" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 15, 0, -4)
+visible = false
 
 [node name="Texts" type="Node" parent="."]
 
@@ -249,3 +252,4 @@ mesh = SubResource("BoxMesh_u2i7p")
 [connection signal="turn" from="Buttons/Start game" to="Camera3D" method="_on_start_game_turn_game"]
 [connection signal="turn" from="Buttons/Collection_toMain" to="Camera3D" method="_on_collection_to_main_turn"]
 [connection signal="turn" from="Buttons/Game_to_Collection" to="Camera3D" method="_on_game_to_collection_turn"]
+[connection signal="game_finished" from="GrowTree" to="." method="_on_grow_tree_game_finished"]

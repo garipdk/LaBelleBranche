@@ -47,7 +47,7 @@ var statistic_science_magic:int = 0
 var object_point:int = 10
 
 var current_turn_object:Dictionary
-
+signal game_finished
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	all_objects = [oiseau, engrais, peinture, livre, briquet, bar_de_fer, feuille_morte, lunettes]
@@ -121,7 +121,8 @@ func play_turn(turn_object:Dictionary, played_object_str:String, played_object=n
 			Save.save_tree_win("rationalite")
 		else:
 			Save.save_tree_win("multifruit")
-
+		game_finished.emit()
+	
 func applic_statistic(turn_object:Dictionary, played_object:String):
 	statistic_science_magic += turn_object[played_object] * object_point
 
