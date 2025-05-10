@@ -14,3 +14,6 @@ func _on_start_game_turn_game() -> void:
 	
 func _on_collection_to_main_turn() -> void:
 	animation_player.play("Collection_to_Main")
+
+func _on_game_to_collection_turn() -> void:
+	animation_player.play("Game_to_Collection")
