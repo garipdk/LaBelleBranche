@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://btj3cp0bhn1a0"]
+
+[ext_resource type="Script" uid="uid://c8ls8gd6epsed" path="res://Collection/pot.gd" id="1_ps50m"]
+[ext_resource type="PackedScene" uid="uid://3yjuimcc0is1" path="res://Collection/Placeholder.tscn" id="2_aianp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2w1nl"]
+albedo_color = Color(0.828769, 0, 0.0138064, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2w1nl"]
+material = SubResource("StandardMaterial3D_2w1nl")
+top_radius = 0.3
+bottom_radius = 0.22
+height = 0.5
+
+[node name="Pot" type="Node3D"]
+script = ExtResource("1_ps50m")
+tree_scene = ExtResource("2_aianp")
+show_tree = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.513, 0, 0, 0, 1, 0, 0, 0, 2.513, 0, 0.25, 0)
+mesh = SubResource("CylinderMesh_2w1nl")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999906, -0.0137179, 0, 0.0137179, 0.999906, 0, 0.823451, 1.45689)
