@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://detnbvkxj3g7a"
+path.s3tc="res://.godot/imported/Peinture_tableau.png-8cc551fe14880f70bfb0697b392598ab.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "d8fcc8e62838ab1b2a9f68033e35b694"
+}
+
+[deps]
+
+source_file="res://Assets/Objets_pour_arbre/Peinture_tableau.png"
+dest_files=["res://.godot/imported/Peinture_tableau.png-8cc551fe14880f70bfb0697b392598ab.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

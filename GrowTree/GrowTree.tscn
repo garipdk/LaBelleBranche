@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://coe6hqacb5mji"]
+[gd_scene load_steps=27 format=3 uid="uid://coe6hqacb5mji"]
 
 [ext_resource type="Script" uid="uid://y4fuijfll6vg" path="res://GrowTree/grow_tree.gd" id="1_bmqap"]
 [ext_resource type="PackedScene" uid="uid://7mjhpjm2lsct" path="res://Assets/Objets_pour_arbre/Briquet.glb" id="2_4ssft"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cg5mkkqu6ihjf" path="res://Particle/particle_effect_evolution.tscn" id="2_spcsk"]
 [ext_resource type="PackedScene" uid="uid://1o8rx2b3l8d6" path="res://Assets/Objets_pour_arbre/BarDeFer.glb" id="3_7sx0u"]
 [ext_resource type="PackedScene" uid="uid://cbqwsgemsd7ck" path="res://Assets/Objets_pour_arbre/Oiseau.glb" id="4_i0dpw"]
+[ext_resource type="PackedScene" uid="uid://dqh3oxh1d8243" path="res://Assets/Objets_pour_arbre/Engrais.glb" id="5_1poxr"]
+[ext_resource type="PackedScene" uid="uid://cesp8i745jycs" path="res://Assets/Objets_pour_arbre/Peinture.glb" id="6_ss1df"]
+[ext_resource type="PackedScene" uid="uid://d2sxl71khn6v0" path="res://Assets/Objets_pour_arbre/Lunettes.glb" id="9_qrlye"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spcsk"]
 albedo_color = Color(0, 1, 0, 1)
@@ -56,20 +59,7 @@ height = 4.0
 size = Vector2(1.6, 0.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bmqap"]
-size = Vector3(0.2, 0.2, 0.1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ssft"]
-albedo_color = Color(0.545098, 0.270588, 0.0745098, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_7sx0u"]
-material = SubResource("StandardMaterial3D_4ssft")
-size = Vector3(0.2, 0.2, 0.1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hn6fc"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_i0dpw"]
-material = SubResource("StandardMaterial3D_hn6fc")
-size = Vector3(0.2, 0.2, 0.1)
+size = Vector3(0.2, 0.2, 0.16)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fvsf"]
 albedo_color = Color(0, 0, 0, 1)
@@ -83,13 +73,6 @@ albedo_color = Color(0.709804, 0.396078, 0.113725, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wnlg3"]
 material = SubResource("StandardMaterial3D_2rhhc")
-size = Vector3(0.2, 0.2, 0.1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ifl5"]
-albedo_color = Color(0, 0, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_mmtbd"]
-material = SubResource("StandardMaterial3D_3ifl5")
 size = Vector3(0.2, 0.2, 0.1)
 
 [node name="GrowTree" type="Node3D"]
@@ -193,27 +176,27 @@ transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 0, 0.075
 [node name="OiseauCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Oiseau/OiseauStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
 
-[node name="Engrais" type="Node3D" parent="ToolBar"]
-transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 5.91278e-05, 0, -0.2)
+[node name="Engrais" parent="ToolBar" instance=ExtResource("5_1poxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
 
-[node name="EngraisMeshInstance3D" type="MeshInstance3D" parent="ToolBar/Engrais"]
-mesh = SubResource("BoxMesh_7sx0u")
-skeleton = NodePath("../../ToolBarMeshInstance3D")
+[node name="Engais" parent="ToolBar/Engrais" index="0"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.0291772, -0.0753131, 0)
 
 [node name="EngraisStaticBody3D" type="StaticBody3D" parent="ToolBar/Engrais"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 0.0466604, 0.0276263, 0)
 
 [node name="EngraisCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Engrais/EngraisStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
 
-[node name="Peinture" type="Node3D" parent="ToolBar"]
-transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, -5.91278e-05, 0, 0.2)
+[node name="Peinture" parent="ToolBar" instance=ExtResource("6_ss1df")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.91278e-05, -0.0424504, 0.2)
 visible = false
 
-[node name="PeintureMeshInstance3D" type="MeshInstance3D" parent="ToolBar/Peinture"]
-mesh = SubResource("BoxMesh_i0dpw")
-skeleton = NodePath("../../ToolBarMeshInstance3D")
+[node name="Tableau" parent="ToolBar/Peinture" index="0"]
+transform = Transform3D(8.01762, 0, 0, 0, 8.01762, 0, 0, 0, 8.01762, 0, -0.016874, 0)
 
 [node name="PeintureStaticBody3D" type="StaticBody3D" parent="ToolBar/Peinture"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 0, 0.0678673, 0)
 
 [node name="PeintureCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Peinture/PeintureStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
@@ -269,15 +252,15 @@ skeleton = NodePath("../../ToolBarMeshInstance3D")
 [node name="FeuilleMorteCollisionShape3D" type="CollisionShape3D" parent="ToolBar/FeuilleMorte/FeuilleMorteStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
 
-[node name="Lunettes" type="Node3D" parent="ToolBar"]
-transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 0.00017786, 0, -0.6)
+[node name="Lunettes" parent="ToolBar" instance=ExtResource("9_qrlye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6)
 visible = false
 
-[node name="LunettesMeshInstance3D" type="MeshInstance3D" parent="ToolBar/Lunettes"]
-mesh = SubResource("BoxMesh_mmtbd")
-skeleton = NodePath("../../ToolBarMeshInstance3D")
+[node name="Lunettes" parent="ToolBar/Lunettes" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125027, 0, 0)
 
 [node name="LunettesStaticBody3D" type="StaticBody3D" parent="ToolBar/Lunettes"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 0.0595536, 0, 0)
 
 [node name="LunettesCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Lunettes/LunettesStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
@@ -296,5 +279,8 @@ one_shot = true
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="ToolBar/Oiseau"]
+[editable path="ToolBar/Engrais"]
+[editable path="ToolBar/Peinture"]
 [editable path="ToolBar/Briquet"]
 [editable path="ToolBar/BarDeFer"]
+[editable path="ToolBar/Lunettes"]

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cesp8i745jycs"
-path="res://.godot/imported/Tableau.glb-ed47a880aecb025a1cb471b4721287aa.scn"
+uid="uid://d2sxl71khn6v0"
+path="res://.godot/imported/Lunettes.glb-f6d6508f254c403a7adbd720fcb45d05.scn"
 
 [deps]
 
-source_file="res://Assets/Objets_pour_arbre/Tableau.glb"
-dest_files=["res://.godot/imported/Tableau.glb-ed47a880aecb025a1cb471b4721287aa.scn"]
+source_file="res://Assets/Objets_pour_arbre/Lunettes.glb"
+dest_files=["res://.godot/imported/Lunettes.glb-f6d6508f254c403a7adbd720fcb45d05.scn"]
 
 [params]
 
