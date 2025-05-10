@@ -1,6 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://coe6hqacb5mji"]
+[gd_scene load_steps=30 format=3 uid="uid://coe6hqacb5mji"]
 
 [ext_resource type="Script" uid="uid://y4fuijfll6vg" path="res://GrowTree/grow_tree.gd" id="1_bmqap"]
+[ext_resource type="PackedScene" uid="uid://7mjhpjm2lsct" path="res://Assets/Objets_pour_arbre/Briquet.glb" id="2_4ssft"]
+[ext_resource type="PackedScene" uid="uid://1o8rx2b3l8d6" path="res://Assets/Objets_pour_arbre/BarDeFer.glb" id="3_7sx0u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spcsk"]
 albedo_color = Color(0, 1, 0, 1)
@@ -81,20 +83,6 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6mode"]
 material = SubResource("StandardMaterial3D_8fvsf")
-size = Vector3(0.2, 0.2, 0.1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1poxr"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ss1df"]
-material = SubResource("StandardMaterial3D_1poxr")
-size = Vector3(0.2, 0.2, 0.1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrlye"]
-albedo_color = Color(0.299547, 0.299547, 0.299547, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_k7yt5"]
-material = SubResource("StandardMaterial3D_qrlye")
 size = Vector3(0.2, 0.2, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rhhc"]
@@ -234,28 +222,27 @@ skeleton = NodePath("../../ToolBarMeshInstance3D")
 [node name="LivreCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Livre/LivreStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
 
-[node name="Briquet" type="Node3D" parent="ToolBar"]
-transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, -0.00017786, 0, 0.6)
+[node name="Briquet" parent="ToolBar" instance=ExtResource("2_4ssft")]
 visible = false
 
-[node name="BriquetMeshInstance3D" type="MeshInstance3D" parent="ToolBar/Briquet"]
-mesh = SubResource("BoxMesh_ss1df")
-skeleton = NodePath("../../ToolBarMeshInstance3D")
+[node name="Briquet" parent="ToolBar/Briquet" index="0"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.0835716, 0.580214)
 
 [node name="BriquetStaticBody3D" type="StaticBody3D" parent="ToolBar/Briquet"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, -0.00017786, 0, 0.6)
 
 [node name="BriquetCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Briquet/BriquetStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
 
-[node name="BarDeFer" type="Node3D" parent="ToolBar"]
-transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, -5.91278e-05, 0, 0.2)
+[node name="BarDeFer" parent="ToolBar" instance=ExtResource("3_7sx0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
 visible = false
 
-[node name="BarDeFerMeshInstance3D" type="MeshInstance3D" parent="ToolBar/BarDeFer"]
-mesh = SubResource("BoxMesh_k7yt5")
-skeleton = NodePath("../../ToolBarMeshInstance3D")
+[node name="Barre de fer" parent="ToolBar/BarDeFer" index="0"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.114307, 0)
 
 [node name="BarDeFerStaticBody3D" type="StaticBody3D" parent="ToolBar/BarDeFer"]
+transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, -5.91278e-05, 0, 0)
 
 [node name="BarDeFerCollisionShape3D" type="CollisionShape3D" parent="ToolBar/BarDeFer/BarDeFerStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
@@ -294,3 +281,6 @@ shape = SubResource("BoxShape3D_bmqap")
 [connection signal="input_event" from="ToolBar/BarDeFer/BarDeFerStaticBody3D" to="." method="_on_bar_de_fer_static_body_3d_input_event"]
 [connection signal="input_event" from="ToolBar/FeuilleMorte/FeuilleMorteStaticBody3D" to="." method="_on_feuille_morte_static_body_3d_input_event"]
 [connection signal="input_event" from="ToolBar/Lunettes/LunettesStaticBody3D" to="." method="_on_lunettes_static_body_3d_input_event"]
+
+[editable path="ToolBar/Briquet"]
+[editable path="ToolBar/BarDeFer"]
