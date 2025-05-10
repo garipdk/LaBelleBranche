@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://rxvrkdw32yk7"]
+[gd_scene load_steps=29 format=3 uid="uid://rxvrkdw32yk7"]
 
 [ext_resource type="PackedScene" uid="uid://da25w22xck8hd" path="res://Main/Button.tscn" id="1_lxy7q"]
 [ext_resource type="Script" uid="uid://cfkqnvgla4txh" path="res://Main/main.gd" id="1_u2i7p"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bjakcpqs28to2" path="res://Assets/Wall.jpg" id="2_ps1la"]
 [ext_resource type="PackedScene" uid="uid://coe6hqacb5mji" path="res://GrowTree/GrowTree.tscn" id="3_amygn"]
 [ext_resource type="PackedScene" uid="uid://dmjaohtonc7be" path="res://Collection/Collection.tscn" id="5_6aewd"]
+[ext_resource type="Texture2D" uid="uid://bpqsiv3cx5qom" path="res://Assets/grass.png" id="7_hh5pf"]
 
 [sub_resource type="Animation" id="Animation_u2i7p"]
 resource_name = "Collection_to_Main"
@@ -184,6 +185,43 @@ uv1_triplanar = true
 material = SubResource("StandardMaterial3D_u2i7p")
 size = Vector3(40, 1, 30)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u2i7p"]
+sky_top_color = Color(0.523018, 0.643113, 0.952614, 1)
+sky_horizon_color = Color(0.656737, 0.65358, 0.658279, 1)
+sky_curve = 0.160766
+ground_bottom_color = Color(0.0832868, 0.279634, 0.00329416, 1)
+ground_horizon_color = Color(0.141473, 0.322135, 0.19606, 1)
+
+[sub_resource type="Sky" id="Sky_hh5pf"]
+sky_material = SubResource("ProceduralSkyMaterial_u2i7p")
+
+[sub_resource type="Environment" id="Environment_qg80j"]
+background_mode = 2
+background_color = Color(0.671047, 0.780256, 1, 1)
+sky = SubResource("Sky_hh5pf")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_bor5n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh5pf"]
+albedo_texture = ExtResource("7_hh5pf")
+metallic_specular = 0.1
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qg80j"]
+material = SubResource("StandardMaterial3D_hh5pf")
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qg80j"]
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0.403922, 1)
+emission_energy_multiplier = 3.83
+
+[sub_resource type="SphereMesh" id="SphereMesh_bor5n"]
+material = SubResource("StandardMaterial3D_qg80j")
+radius = 2.0
+height = 4.0
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_u2i7p")
 
@@ -196,7 +234,7 @@ libraries = {
 }
 
 [node name="Floor" type="Sprite3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, -4.37114e-07, -10, 0, 10, -4.37114e-07, 0, -2, 0)
+transform = Transform3D(10, 0, 0, 0, -4.37114e-07, -10, 0, 10, -4.37114e-07, -12.4984, -2, 0)
 texture = SubResource("NoiseTexture2D_u2i7p")
 
 [node name="Buttons" type="Node" parent="."]
@@ -236,7 +274,6 @@ outline_size = 40
 
 [node name="Joueur" type="OmniLight3D" parent="Light"]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 9, 0, -1.33418)
-light_energy = 3.0
 omni_range = 100.0
 
 [node name="Sun" type="OmniLight3D" parent="Light"]
@@ -277,6 +314,19 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13736, 7.44779, -0.039196)
 mesh = SubResource("BoxMesh_hh5pf")
 skeleton = NodePath("../MurCollection")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qg80j")
+camera_attributes = SubResource("CameraAttributesPractical_bor5n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0215, -2.01094, 0)
+visible = false
+mesh = SubResource("PlaneMesh_qg80j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8.434, 6.572)
+mesh = SubResource("SphereMesh_bor5n")
 
 [connection signal="turn" from="Buttons/Colletion" to="Camera3D" method="_on_colletion_turn_collection"]
 [connection signal="turn" from="Buttons/Start game" to="." method="_on_start_game_turn"]
