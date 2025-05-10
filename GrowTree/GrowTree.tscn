@@ -177,7 +177,7 @@ mesh = SubResource("CapsuleMesh_qrlye")
 skeleton = NodePath("../..")
 
 [node name="ToolBar" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55463, 0.618334, 1.40859)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08326, 0.618334, 1.40859)
 
 [node name="ToolBarMeshInstance3D" type="MeshInstance3D" parent="ToolBar"]
 transform = Transform3D(0.000296668, 0, 1, 0, 1, 0, -1, 0, 0.000296668, 0, 0, 0)
@@ -285,12 +285,6 @@ skeleton = NodePath("../../ToolBarMeshInstance3D")
 
 [node name="LunettesCollisionShape3D" type="CollisionShape3D" parent="ToolBar/Lunettes/LunettesStaticBody3D"]
 shape = SubResource("BoxShape3D_bmqap")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.0105241, 0, 0.999945, 0, 1, 0, -0.999945, 0, -0.0105241, 4.92089, 0.588707, 0.534319)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63441, 0, -1.90093)
 
 [connection signal="input_event" from="ToolBar/Oiseau/OiseauStaticBody3D" to="." method="_on_oiseau_static_body_3d_input_event"]
 [connection signal="input_event" from="ToolBar/Engrais/EngraisStaticBody3D" to="." method="_on_engrais_static_body_3d_input_event"]

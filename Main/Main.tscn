@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://rxvrkdw32yk7"]
+[gd_scene load_steps=13 format=3 uid="uid://rxvrkdw32yk7"]
 
 [ext_resource type="PackedScene" uid="uid://da25w22xck8hd" path="res://Main/Button.tscn" id="1_lxy7q"]
 [ext_resource type="Script" uid="uid://b2c8ur5b04ude" path="res://Main/scripts/camera_3d.gd" id="2_amygn"]
+[ext_resource type="PackedScene" uid="uid://coe6hqacb5mji" path="res://GrowTree/GrowTree.tscn" id="3_amygn"]
 
 [sub_resource type="Animation" id="Animation_ps1la"]
 length = 0.001
@@ -148,6 +149,24 @@ outline_size = 40
 [node name="Floor" type="Sprite3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, -4.37114e-07, -10, 0, 10, -4.37114e-07, 0, -2, 0)
 texture = SubResource("NoiseTexture2D_u2i7p")
+
+[node name="GrowTree" parent="." instance=ExtResource("3_amygn")]
+transform = Transform3D(-1.2, 0, -1.81195e-07, 0, 1.2, 0, 1.81195e-07, 0, -1.2, 15, 0, 0)
+
+[node name="Light" type="Node" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 9, 0, -1.33418)
+light_energy = 5.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Light"]
+transform = Transform3D(1, 0, 3.01992e-07, 0, 1, 0, -3.01992e-07, 0, 1, 12.7993, 0, 1.35601e-06)
+light_energy = 3.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Light"]
+transform = Transform3D(1, 0, 3.01992e-07, 0, 1, 0, -3.01992e-07, 0, 1, 14.9033, 3.98065, 1.56163)
+light_energy = 5.0
+light_indirect_energy = 5.0
 
 [connection signal="turn" from="Buttons/Colletion" to="Camera3D" method="_on_colletion_turn_collection"]
 [connection signal="turn" from="Buttons/Start game" to="Camera3D" method="_on_start_game_turn_game"]
