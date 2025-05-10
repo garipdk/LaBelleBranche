@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://rxvrkdw32yk7"]
+[gd_scene load_steps=20 format=3 uid="uid://rxvrkdw32yk7"]
 
 [ext_resource type="PackedScene" uid="uid://da25w22xck8hd" path="res://Main/Button.tscn" id="1_lxy7q"]
-[ext_resource type="Script" uid="uid://cfkqnvgla4txh" path="res://Main/main.gd" id="1_u2i7p"]
+[ext_resource type="Script" path="res://Main/main.gd" id="1_u2i7p"]
 [ext_resource type="Script" uid="uid://b2c8ur5b04ude" path="res://Main/scripts/camera_3d.gd" id="2_amygn"]
 [ext_resource type="Texture2D" uid="uid://bjakcpqs28to2" path="res://Assets/Wall.jpg" id="2_ps1la"]
 [ext_resource type="PackedScene" uid="uid://coe6hqacb5mji" path="res://GrowTree/GrowTree.tscn" id="3_amygn"]
@@ -175,6 +175,15 @@ uv1_triplanar = true
 material = SubResource("StandardMaterial3D_6aewd")
 size = Vector3(30, 10, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2i7p"]
+albedo_texture = ExtResource("2_ps1la")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_hh5pf"]
+material = SubResource("StandardMaterial3D_u2i7p")
+size = Vector3(40, 1, 30)
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_u2i7p")
 
@@ -230,23 +239,38 @@ light_energy = 2.0
 light_indirect_energy = 5.0
 omni_range = 100.0
 
+[node name="CollectionLight" type="OmniLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9143, 2.01567, 0)
+light_energy = 3.0
+omni_range = 100.0
+
 [node name="Collection" parent="." instance=ExtResource("5_6aewd")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, 0, 0)
 
 [node name="GrowTree" parent="." instance=ExtResource("3_amygn")]
 transform = Transform3D(-1.2, 0, -1.81195e-07, 0, 1.2, 0, 1.81195e-07, 0, -1.2, 15, 0.4, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="House" type="Node" parent="."]
+
+[node name="Mur_Menu" type="MeshInstance3D" parent="House"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.25, -8.607)
 mesh = SubResource("BoxMesh_u2i7p")
+skeleton = NodePath("../..")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="MurCollection" type="MeshInstance3D" parent="House"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -17, 2.25, -0.039196)
 mesh = SubResource("BoxMesh_u2i7p")
+skeleton = NodePath("../..")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+[node name="MurDerrier" type="MeshInstance3D" parent="House"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.25, 11.9509)
 mesh = SubResource("BoxMesh_u2i7p")
+skeleton = NodePath("../..")
+
+[node name="Plafond" type="MeshInstance3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13736, 7.44779, -0.039196)
+mesh = SubResource("BoxMesh_hh5pf")
+skeleton = NodePath("../MurCollection")
 
 [connection signal="turn" from="Buttons/Colletion" to="Camera3D" method="_on_colletion_turn_collection"]
 [connection signal="turn" from="Buttons/Start game" to="Camera3D" method="_on_start_game_turn_game"]

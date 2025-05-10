@@ -5,7 +5,6 @@ extends Camera3D
 func _ready() -> void:
 	pass
 
-
 func _on_colletion_turn_collection() -> void:
 	animation_player.play("Main_to_Collection")
 
