@@ -13,4 +13,4 @@ config_version=5
 config/name="La Belle Branche"
 run/main_scene="uid://rxvrkdw32yk7"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://chh782eoamkbw"
