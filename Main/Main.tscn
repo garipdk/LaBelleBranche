@@ -236,7 +236,7 @@ uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_hh5pf"]
 material = SubResource("StandardMaterial3D_u2i7p")
-size = Vector3(40, 1, 30)
+size = Vector3(30.5, 1, 30)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u2i7p"]
 sky_top_color = Color(0.523018, 0.643113, 0.952614, 1)
@@ -365,7 +365,7 @@ mesh = SubResource("BoxMesh_u2i7p")
 skeleton = NodePath("../..")
 
 [node name="Plafond" type="MeshInstance3D" parent="House"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13736, 7.44779, -0.039196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27252, 7.44779, -0.039196)
 mesh = SubResource("BoxMesh_hh5pf")
 skeleton = NodePath("../MurCollection")
 
