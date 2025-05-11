@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var game_to_collection_button = $Buttons/Game_to_Collection
-@onready var victory_label: Label3D = $VictoryLabel
+@onready var victory_label: Sprite3D = $VictoryLabel
 
 @onready var collection = $Collection
 @onready var grow_tree = $GrowTree
