@@ -283,13 +283,13 @@ texture = SubResource("NoiseTexture2D_u2i7p")
 
 [node name="Buttons" type="Node" parent="."]
 
-[node name="Colletion" parent="Buttons" instance=ExtResource("1_lxy7q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9241, -6)
-texture = ExtResource("4_6ivxk")
-
 [node name="Start game" parent="Buttons" instance=ExtResource("1_lxy7q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46532, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.924, -6)
 texture = ExtResource("5_6yo1i")
+
+[node name="Colletion" parent="Buttons" instance=ExtResource("1_lxy7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.465, -6)
+texture = ExtResource("4_6ivxk")
 
 [node name="Collection_toMain" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, -3)
@@ -398,9 +398,9 @@ texture = ExtResource("17_r2ac1")
 stream = ExtResource("7_hh5pf")
 autoplay = true
 
-[connection signal="turn" from="Buttons/Colletion" to="Camera3D" method="_on_colletion_turn_collection"]
 [connection signal="turn" from="Buttons/Start game" to="." method="_on_start_game_turn"]
 [connection signal="turn" from="Buttons/Start game" to="Camera3D" method="_on_start_game_turn_game"]
+[connection signal="turn" from="Buttons/Colletion" to="Camera3D" method="_on_colletion_turn_collection"]
 [connection signal="turn" from="Buttons/Collection_toMain" to="Camera3D" method="_on_collection_to_main_turn"]
 [connection signal="turn" from="Buttons/Game_to_Collection" to="." method="_on_game_to_collection_turn"]
 [connection signal="turn" from="Buttons/Game_to_Collection" to="Camera3D" method="_on_game_to_collection_turn"]
