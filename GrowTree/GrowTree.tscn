@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://coe6hqacb5mji"]
+[gd_scene load_steps=28 format=3 uid="uid://coe6hqacb5mji"]
 
 [ext_resource type="Script" uid="uid://y4fuijfll6vg" path="res://GrowTree/grow_tree.gd" id="1_bmqap"]
 [ext_resource type="PackedScene" uid="uid://7mjhpjm2lsct" path="res://Assets/Objets_pour_arbre/Briquet.glb" id="2_4ssft"]
 [ext_resource type="PackedScene" uid="uid://ck152rmu0mu6g" path="res://Assets/3D Models/Arbres/Neutral_Mid/TreeBasic2.glb" id="2_7sx0u"]
 [ext_resource type="PackedScene" uid="uid://cg5mkkqu6ihjf" path="res://Particle/particle_effect_evolution.tscn" id="2_spcsk"]
+[ext_resource type="PackedScene" uid="uid://diltpgi7f5h8p" path="res://Assets/3D Models/Graine/TreeBasic0.glb" id="3_3ifl5"]
 [ext_resource type="PackedScene" uid="uid://1o8rx2b3l8d6" path="res://Assets/Objets_pour_arbre/BarDeFer.glb" id="3_7sx0u"]
 [ext_resource type="PackedScene" uid="uid://cbqwsgemsd7ck" path="res://Assets/Objets_pour_arbre/Oiseau.glb" id="4_i0dpw"]
 [ext_resource type="PackedScene" uid="uid://b8xalrfy4uwvy" path="res://Assets/3D Models/Arbres/Rational_final/TreeScience3.glb" id="4_ss1df"]
@@ -78,11 +79,8 @@ one_shot = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75611, 0, 0)
 one_shot = true
 
-[node name="TreeBasic0" type="Node3D" parent="."]
-
-[node name="TreeBasic1MeshInstance3D" type="MeshInstance3D" parent="TreeBasic0"]
-mesh = SubResource("CapsuleMesh_4ssft")
-skeleton = NodePath("../..")
+[node name="TreeBasic0" parent="." instance=ExtResource("3_3ifl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8101, 0)
 
 [node name="TreeBasic1" type="Node3D" parent="."]
 visible = false

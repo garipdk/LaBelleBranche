@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://diltpgi7f5h8p"
-path="res://.godot/imported/Graine.glb-5c2ae65745c8b6159266a2a671effe05.scn"
+path="res://.godot/imported/TreeBasic0.glb-30d2dd06cb5efa955a1a69a0a91875b2.scn"
 
 [deps]
 
-source_file="res://Assets/3D Models/Graine/Graine.glb"
-dest_files=["res://.godot/imported/Graine.glb-5c2ae65745c8b6159266a2a671effe05.scn"]
+source_file="res://Assets/3D Models/Graine/TreeBasic0.glb"
+dest_files=["res://.godot/imported/TreeBasic0.glb-30d2dd06cb5efa955a1a69a0a91875b2.scn"]
 
 [params]
 
