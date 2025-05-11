@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://7gjavglr14hc"]
+
+[ext_resource type="Material" uid="uid://dgvxs16d4e67v" path="res://Assets/Material/wood_noise.material" id="1_s0ro6"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mpsd3"]
+material = ExtResource("1_s0ro6")
+top_radius = 0.2
+bottom_radius = 0.2
+height = 1.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_6k3u6"]
+material = ExtResource("1_s0ro6")
+size = Vector3(2, 0.2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qb0st"]
+material = ExtResource("1_s0ro6")
+size = Vector3(0.2, 2, 2)
+
+[node name="Chaise" type="Node3D"]
+
+[node name="Pied4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+mesh = SubResource("CylinderMesh_mpsd3")
+
+[node name="Pied5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.6, 0)
+mesh = SubResource("CylinderMesh_mpsd3")
+
+[node name="Pied6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.6, 1)
+mesh = SubResource("CylinderMesh_mpsd3")
+
+[node name="Pied7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 1)
+mesh = SubResource("CylinderMesh_mpsd3")
+
+[node name="Assise" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.2, 0.5)
+mesh = SubResource("BoxMesh_6k3u6")
+
+[node name="Dossier" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2.133, 0.5)
+mesh = SubResource("BoxMesh_qb0st")
