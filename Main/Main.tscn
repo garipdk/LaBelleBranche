@@ -274,12 +274,12 @@ texture = SubResource("NoiseTexture2D_u2i7p")
 [node name="Buttons" type="Node" parent="."]
 
 [node name="Colletion" parent="Buttons" instance=ExtResource("1_lxy7q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9241, -6)
 text = "Collection"
 x_scale = 3
 
 [node name="Start game" parent="Buttons" instance=ExtResource("1_lxy7q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46532, -6)
 text = "Start Game"
 x_scale = 3
 
@@ -305,10 +305,20 @@ x_scale = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50967, 0, -7.68148)
 text = "Credit"
 
+[node name="Fullscreen" parent="Buttons" instance=ExtResource("1_lxy7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.923455, -6)
+text = "Plein écran"
+x_scale = 3
+
+[node name="Quit" parent="Buttons" instance=ExtResource("1_lxy7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.63714, 0.363773, -6)
+text = "Quitter"
+x_scale = 2
+
 [node name="Texts" type="Node" parent="."]
 
 [node name="Title" type="Label3D" parent="Texts"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4686, -4)
 render_priority = 2
 outline_render_priority = 1
 text = "La Belle Branche"
@@ -391,4 +401,6 @@ outline_size = 30
 [connection signal="turn" from="Buttons/Reset_Collection" to="." method="_on_reset_collection_turn"]
 [connection signal="turn" from="Buttons/Credit_to_Menu" to="Camera3D" method="_on_credit_to_menu_turn"]
 [connection signal="turn" from="Buttons/Main_to_Credit" to="Camera3D" method="_on_main_to_credit_turn"]
+[connection signal="turn" from="Buttons/Fullscreen" to="." method="_on_toggle_fullscreen"]
+[connection signal="turn" from="Buttons/Quit" to="." method="_on_quit"]
 [connection signal="game_finished" from="GrowTree" to="." method="_on_grow_tree_game_finished"]
