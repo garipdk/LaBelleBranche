@@ -167,42 +167,42 @@ func make_invisible(things:Array):
 
 
 func _on_oiseau_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_mask == 1:
 		play_turn(all_turn_objects[turn_idx], oiseau_str)
 
 
 func _on_engrais_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_mask == 1:
 		play_turn(all_turn_objects[turn_idx], engrais_str)
 
 
 func _on_peinture_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_mask == 1:
 		play_turn(all_turn_objects[turn_idx], peinture_str)
 
 
 func _on_livre_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_mask == 1:
 		play_turn(all_turn_objects[turn_idx], livre_str)
 
 
 func _on_briquet_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_mask == 1:
 		play_turn(all_turn_objects[turn_idx], briquet_str, briquet)
 
 
 func _on_bar_de_fer_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_mask == 1:
 		play_turn(all_turn_objects[turn_idx], bar_de_fer_str, bar_de_fer)
 
 
 func _on_feuille_morte_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_mask == 1:
 		play_turn(all_turn_objects[turn_idx], feuille_morte_str, feuille_morte)
 
 
 func _on_lunettes_static_body_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and event.button_mask == 1:
 		play_turn(all_turn_objects[turn_idx], lunettes_str, lunettes)
 
 

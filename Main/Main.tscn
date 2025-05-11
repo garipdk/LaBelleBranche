@@ -1,14 +1,22 @@
-[gd_scene load_steps=31 format=3 uid="uid://rxvrkdw32yk7"]
+[gd_scene load_steps=39 format=3 uid="uid://rxvrkdw32yk7"]
 
 [ext_resource type="PackedScene" uid="uid://da25w22xck8hd" path="res://Main/Button.tscn" id="1_lxy7q"]
 [ext_resource type="Script" uid="uid://cfkqnvgla4txh" path="res://Main/main.gd" id="1_u2i7p"]
 [ext_resource type="Script" uid="uid://b2c8ur5b04ude" path="res://Main/scripts/camera_3d.gd" id="2_amygn"]
 [ext_resource type="Texture2D" uid="uid://bjakcpqs28to2" path="res://Assets/Wall.jpg" id="2_ps1la"]
 [ext_resource type="PackedScene" uid="uid://coe6hqacb5mji" path="res://GrowTree/GrowTree.tscn" id="3_amygn"]
+[ext_resource type="Texture2D" uid="uid://cgyc8tme8ga1a" path="res://Assets/UI/Bouton collection.png" id="4_6ivxk"]
 [ext_resource type="PackedScene" uid="uid://4nyot1fh5f8g" path="res://Assets/3D Models/Mesh_Meuble/table.tscn" id="4_qg80j"]
 [ext_resource type="PackedScene" uid="uid://dmjaohtonc7be" path="res://Collection/Collection.tscn" id="5_6aewd"]
+[ext_resource type="Texture2D" uid="uid://bb34de01dmnpk" path="res://Assets/UI/Bouton commencer.png" id="5_6yo1i"]
+[ext_resource type="Texture2D" uid="uid://cgrg14c0jefmu" path="res://Assets/UI/Bouton reset.png" id="6_lrfe7"]
 [ext_resource type="AudioStream" uid="uid://ds0gsfly71mng" path="res://Assets/Sounds/belle_branche.wav" id="7_hh5pf"]
-[ext_resource type="PackedScene" uid="uid://7gjavglr14hc" path="res://Assets/3D Models/Mesh_Meuble/chaise.tscn" id="8_bor5n"]
+[ext_resource type="Texture2D" uid="uid://c4gfkl6kketl0" path="res://Assets/UI/Bouton credit.png" id="7_r2ac1"]
+[ext_resource type="PackedScene" path="res://Assets/3D Models/Mesh_Meuble/chaise.tscn" id="8_bor5n"]
+[ext_resource type="Texture2D" uid="uid://i3yjce0sm4pl" path="res://Assets/UI/Bouton plein ecran.png" id="8_d3r6l"]
+[ext_resource type="Texture2D" uid="uid://dnwukf42vcdd" path="res://Assets/UI/Bouton quiter.png" id="9_fayjp"]
+[ext_resource type="Texture2D" uid="uid://dpr6sjj4i0snr" path="res://Assets/UI/Titre du jeu.png" id="10_lrfe7"]
+[ext_resource type="Texture2D" uid="uid://ivliaemeywr2" path="res://Assets/UI/Cadre credit.png" id="16_r2ac1"]
 
 [sub_resource type="Animation" id="Animation_u2i7p"]
 resource_name = "Collection_to_Main"
@@ -278,56 +286,44 @@ texture = SubResource("NoiseTexture2D_u2i7p")
 
 [node name="Colletion" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9241, -6)
-text = "Collection"
-x_scale = 3
+texture = ExtResource("4_6ivxk")
 
 [node name="Start game" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46532, -6)
-text = "Commencer"
-x_scale = 3
+texture = ExtResource("5_6yo1i")
 
 [node name="Collection_toMain" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, -3)
-text = "Menu"
 
 [node name="Game_to_Collection" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 13.322, 0, -2.3)
 visible = false
-text = "Collection"
+texture = ExtResource("4_6ivxk")
 
 [node name="Reset_Collection" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, 3.52266)
-text = "Recommencer la collection"
-x_scale = 2
+texture = ExtResource("6_lrfe7")
 
 [node name="Credit_to_Menu" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 6.323, -3)
-text = "Menu"
-x_scale = 3
 
 [node name="Main_to_Credit" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50967, 0, -7.68148)
-text = "Credit"
+texture = ExtResource("7_r2ac1")
 
 [node name="Fullscreen" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.923455, -6)
-text = "Plein écran"
-x_scale = 3
+texture = ExtResource("8_d3r6l")
 
 [node name="Quit" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.63714, 0.363773, -6)
-text = "Quitter"
-x_scale = 2
+texture = ExtResource("9_fayjp")
 
 [node name="Texts" type="Node" parent="."]
 
-[node name="Title" type="Label3D" parent="Texts"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4686, -4)
-render_priority = 2
-outline_render_priority = 1
-text = "La Belle Branche"
-font_size = 100
-outline_size = 40
+[node name="Title" type="Sprite3D" parent="Texts"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 2.4, -4)
+texture = ExtResource("10_lrfe7")
 
 [node name="Light" type="Node" parent="."]
 
@@ -391,6 +387,10 @@ camera_attributes = SubResource("CameraAttributesPractical_bor5n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8.434, 6.572)
 mesh = SubResource("SphereMesh_bor5n")
 
+[node name="Credit" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0136015, 6, 0.947699)
+texture = ExtResource("16_r2ac1")
+
 [node name="VictoryLabel" type="Label3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 2, 0)
 outline_modulate = Color(0.087385, 0.0597293, 0.29421, 1)
@@ -398,12 +398,6 @@ text = "Bravo, tu as un magnifique arbre !
 "
 font_size = 40
 outline_size = 20
-
-[node name="Credit" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2, 6.323, 2)
-text = "Crédits :"
-font_size = 60
-outline_size = 30
 
 [node name="BelleBrancheAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_hh5pf")

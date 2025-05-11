@@ -1,13 +1,10 @@
 extends StaticBody3D
 
-@onready var label_3d: Label3D = $Label3D
 @onready var sprite_3d: Sprite3D = $Sprite3D
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 
 @export_category("Main Button")
-@export var text: String = "default text"
-@export var texture: Texture2D = preload("res://icon.svg")
-@export var x_scale: int = 3
+@export var texture: Texture2D = preload("res://Assets/UI/Bouton retour.png")
 
 var texture_height: int
 var texture_width: int
@@ -16,21 +13,12 @@ var width_on_height_ratio: float
 signal turn
 
 func _ready() -> void:
-	if not label_3d.is_node_ready():
-		await label_3d.ready
 	if not sprite_3d.is_node_ready():
 		await sprite_3d.ready
 	if not collision_shape_3d.is_node_ready():
 		await collision_shape_3d.ready
 		
-	label_3d.text = text
 	sprite_3d.texture = texture
-	self.texture_height = texture.get_height()
-	self.texture_width = texture.get_width()
-	self.width_on_height_ratio  = self.texture_width/self.texture_height
-	sprite_3d.scale = Vector3(x_scale*self.width_on_height_ratio,1,1)
-	collision_shape_3d.scale *= Vector3(x_scale*self.width_on_height_ratio,1,1)
-
 	
 	
 func _on_input_event(
