@@ -26,6 +26,7 @@ func _ready() -> void:
 func _on_grow_tree_game_finished() -> void:
 	game_to_collection_button.visible = true
 	victory_label.visible = true
+	is_need_reset = true
 
 
 func _on_reset_collection_turn() -> void:
@@ -34,7 +35,6 @@ func _on_reset_collection_turn() -> void:
 
 
 func _on_game_to_collection_turn() -> void:
-	is_need_reset = true
 	collection.show_collection()
 
 

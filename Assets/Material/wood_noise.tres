@@ -1,20 +1,9 @@
-[gd_resource type="BoxMesh" load_steps=5 format=3 uid="uid://cgfk4jfs1nh6y"]
+[gd_resource type="BoxMesh" load_steps=3 format=3 uid="uid://cgfk4jfs1nh6y"]
 
-[sub_resource type="Gradient" id="Gradient_0q46b"]
-offsets = PackedFloat32Array(0, 0.717073)
-colors = PackedColorArray(0.20406, 0.098261, 0.0192546, 1, 0.406796, 0.218787, 0.0743734, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_db4ag"]
-noise_type = 4
-seed = 2
-frequency = 0.0109
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dlpih"]
-color_ramp = SubResource("Gradient_0q46b")
-noise = SubResource("FastNoiseLite_db4ag")
+[ext_resource type="Texture2D" uid="uid://c1kf0h6ovj4cs" path="res://Assets/Texture_bois.png" id="1_db4ag"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0q46b"]
-albedo_texture = SubResource("NoiseTexture2D_dlpih")
+albedo_texture = ExtResource("1_db4ag")
 
 [resource]
 material = SubResource("StandardMaterial3D_0q46b")

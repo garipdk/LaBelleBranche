@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://da25w22xck8hd" path="res://Main/Button.tscn" id="1_lxy7q"]
 [ext_resource type="Script" uid="uid://cfkqnvgla4txh" path="res://Main/main.gd" id="1_u2i7p"]
 [ext_resource type="Script" uid="uid://b2c8ur5b04ude" path="res://Main/scripts/camera_3d.gd" id="2_amygn"]
-[ext_resource type="Texture2D" uid="uid://bjakcpqs28to2" path="res://Assets/Wall.jpg" id="2_ps1la"]
 [ext_resource type="PackedScene" uid="uid://coe6hqacb5mji" path="res://GrowTree/GrowTree.tscn" id="3_amygn"]
 [ext_resource type="Texture2D" uid="uid://cgyc8tme8ga1a" path="res://Assets/UI/Bouton collection.png" id="4_6ivxk"]
 [ext_resource type="PackedScene" uid="uid://4nyot1fh5f8g" path="res://Assets/3D Models/Mesh_Meuble/table.tscn" id="4_qg80j"]
@@ -12,10 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://cgrg14c0jefmu" path="res://Assets/UI/Bouton reset.png" id="6_lrfe7"]
 [ext_resource type="AudioStream" uid="uid://ds0gsfly71mng" path="res://Assets/Sounds/belle_branche.wav" id="7_hh5pf"]
 [ext_resource type="Texture2D" uid="uid://c4gfkl6kketl0" path="res://Assets/UI/Bouton credit.png" id="7_r2ac1"]
-[ext_resource type="PackedScene" path="res://Assets/3D Models/Mesh_Meuble/chaise.tscn" id="8_bor5n"]
+[ext_resource type="PackedScene" uid="uid://bmoeik7i6xjjb" path="res://Assets/3D Models/Mesh_Meuble/chaise.tscn" id="8_bor5n"]
 [ext_resource type="Texture2D" uid="uid://i3yjce0sm4pl" path="res://Assets/UI/Bouton plein ecran.png" id="8_d3r6l"]
 [ext_resource type="Texture2D" uid="uid://dn5nu5b183u71" path="res://Assets/UI/Bouton quiter.png" id="9_fayjp"]
 [ext_resource type="Texture2D" uid="uid://dpr6sjj4i0snr" path="res://Assets/UI/Titre du jeu.png" id="10_lrfe7"]
+[ext_resource type="Texture2D" uid="uid://xbh44pclt567" path="res://Assets/Texture_mur.png" id="13_d3r6l"]
 [ext_resource type="Texture2D" uid="uid://ivliaemeywr2" path="res://Assets/UI/Cadre credit.png" id="16_r2ac1"]
 [ext_resource type="Texture2D" uid="uid://dkctk6cmjp255" path="res://Assets/UI/Bravo,tu as un magnifique arbre.png" id="17_r2ac1"]
 
@@ -223,8 +223,7 @@ color_ramp = SubResource("Gradient_ps1la")
 noise = SubResource("FastNoiseLite_6aewd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6aewd"]
-albedo_texture = ExtResource("2_ps1la")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
+albedo_texture = ExtResource("13_d3r6l")
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_u2i7p"]
@@ -232,8 +231,7 @@ material = SubResource("StandardMaterial3D_6aewd")
 size = Vector3(30, 10, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2i7p"]
-albedo_texture = ExtResource("2_ps1la")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
+albedo_texture = ExtResource("13_d3r6l")
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_hh5pf"]
