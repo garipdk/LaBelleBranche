@@ -95,6 +95,7 @@ func _ready() -> void:
 											"magic" : tree_magic_3},
 							"next_objects" : []}
 	Save.load_save()
+	restart_game()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

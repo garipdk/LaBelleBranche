@@ -83,28 +83,24 @@ one_shot = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8101, 0)
 
 [node name="TreeBasic1" type="Node3D" parent="."]
-visible = false
 
 [node name="TreeBasic1MeshInstance3D" type="MeshInstance3D" parent="TreeBasic1"]
 mesh = SubResource("CapsuleMesh_4ssft")
 skeleton = NodePath("../..")
 
 [node name="TreeScience1" type="Node3D" parent="."]
-visible = false
 
 [node name="TreeScience1MeshInstance3D" type="MeshInstance3D" parent="TreeScience1"]
 mesh = SubResource("CapsuleMesh_bmqap")
 skeleton = NodePath("../..")
 
 [node name="TreeMagic1" type="Node3D" parent="."]
-visible = false
 
 [node name="TreeMagic1MeshInstance3D" type="MeshInstance3D" parent="TreeMagic1"]
 mesh = SubResource("CapsuleMesh_hn6fc")
 skeleton = NodePath("../..")
 
 [node name="TreeScience2" type="Node3D" parent="."]
-visible = false
 
 [node name="TreeScience2MeshInstance3D" type="MeshInstance3D" parent="TreeScience2"]
 mesh = SubResource("CapsuleMesh_i0dpw")
@@ -112,10 +108,8 @@ skeleton = NodePath("../..")
 
 [node name="TreeBasic2" parent="." instance=ExtResource("2_7sx0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
-visible = false
 
 [node name="TreeMagic2" type="Node3D" parent="."]
-visible = false
 
 [node name="TreeMagic2MeshInstance3D" type="MeshInstance3D" parent="TreeMagic2"]
 mesh = SubResource("CapsuleMesh_6mode")
@@ -123,10 +117,8 @@ skeleton = NodePath("../..")
 
 [node name="TreeScience3" parent="." instance=ExtResource("4_ss1df")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.76894, 0)
-visible = false
 
 [node name="TreeBasic3" type="Node3D" parent="."]
-visible = false
 
 [node name="TreeBasic3MeshInstance3D" type="MeshInstance3D" parent="TreeBasic3"]
 mesh = SubResource("CapsuleMesh_ss1df")
@@ -134,7 +126,6 @@ skeleton = NodePath("")
 
 [node name="TreeMagic3" parent="." instance=ExtResource("5_2rhhc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -2, 0)
-visible = false
 
 [node name="ToolBar" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18788, 0.618334, 1.40859)
