@@ -35,6 +35,7 @@ var lunettes_str = "lunettes"
 @onready var particles_turn_0 = $GPUParticles3DTurn0
 @onready var particles_turn_1 = $GPUParticles3DTurn1
 @onready var particles_turn_2 = $GPUParticles3DTurn2
+@onready var tool_bar = $ToolBar
 @onready var timer = $Timer
 
 var is_timer_finished:bool = true
@@ -69,6 +70,8 @@ func _ready() -> void:
 	
 	if not timer.is_node_ready():
 		await timer.ready
+	if not tool_bar.is_node_ready():
+		await tool_bar.ready
 	all_turn_objects.resize(3)
 	all_turn_objects[0] = {"oiseau" : 1,
 							"engrais" : -1,
@@ -103,8 +106,8 @@ func restart_game():
 	tree_basic_0.visible = true
 	oiseau.visible = true
 	engrais.visible = true
-	is_timer_finished = true
-	
+	tool_bar.visible = true
+
 func play_turn(turn_object:Dictionary, played_object_str:String, played_object=null):
 	
 	if played_object != null:
@@ -135,6 +138,7 @@ func play_turn(turn_object:Dictionary, played_object_str:String, played_object=n
 				Save.save_tree_win("rationalite")
 			else:
 				Save.save_tree_win("multifruit")
+			tool_bar.visible = false
 			game_finished.emit()
 	
 func applic_statistic(turn_object:Dictionary, played_object:String):
