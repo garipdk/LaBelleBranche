@@ -16,16 +16,20 @@ var width_on_height_ratio: float
 signal turn
 
 func _ready() -> void:
+	if not label_3d.is_node_ready():
+		await label_3d.ready
+	if not sprite_3d.is_node_ready():
+		await sprite_3d.ready
+	if not collision_shape_3d.is_node_ready():
+		await collision_shape_3d.ready
+		
 	label_3d.text = text
 	sprite_3d.texture = texture
 	self.texture_height = texture.get_height()
 	self.texture_width = texture.get_width()
 	self.width_on_height_ratio  = self.texture_width/self.texture_height
-	var shape = BoxShape3D.new()
-	shape.size = Vector3(x_scale*width_on_height_ratio,1,1)
-	collision_shape_3d.set_shape(shape)
-	sprite_3d.scale = Vector3(x_scale*width_on_height_ratio,1,1)
-
+	sprite_3d.scale = Vector3(x_scale*self.width_on_height_ratio,1,1)
+	collision_shape_3d.scale *= Vector3(x_scale*self.width_on_height_ratio,1,1)
 
 	
 	
