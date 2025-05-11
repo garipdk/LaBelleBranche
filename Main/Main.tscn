@@ -280,13 +280,12 @@ x_scale = 3
 
 [node name="Start game" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46532, -6)
-text = "Start Game"
+text = "Commencer"
 x_scale = 3
 
 [node name="Collection_toMain" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, -3)
 text = "Menu"
-x_scale = 3
 
 [node name="Game_to_Collection" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 13.322, 0, -2.3)
@@ -294,7 +293,8 @@ text = "Collection"
 
 [node name="Reset_Collection" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14, 2, 3.52266)
-text = "Reset Collection"
+text = "Recommencer la collection"
+x_scale = 2
 
 [node name="Credit_to_Menu" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 6.323, -3)
