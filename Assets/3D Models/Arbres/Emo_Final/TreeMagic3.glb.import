@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://2axe47etkpox"
-path="res://.godot/imported/Emo_Final_Tree.glb-54d7739475726bc1a7edf04f721eedd7.scn"
+path="res://.godot/imported/TreeMagic3.glb-d43e04e64eaaa52582c30772db396151.scn"
 
 [deps]
 
-source_file="res://Assets/3D Models/Arbres/Emo_Final/Emo_Final_Tree.glb"
-dest_files=["res://.godot/imported/Emo_Final_Tree.glb-54d7739475726bc1a7edf04f721eedd7.scn"]
+source_file="res://Assets/3D Models/Arbres/Emo_Final/TreeMagic3.glb"
+dest_files=["res://.godot/imported/TreeMagic3.glb-d43e04e64eaaa52582c30772db396151.scn"]
 
 [params]
 
