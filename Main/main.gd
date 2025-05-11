@@ -43,3 +43,12 @@ func _on_start_game_turn() -> void:
 		grow_tree.restart_game()
 		is_need_reset = false
 		victory_label.visible = false
+
+func _on_toggle_fullscreen() -> void:
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
+func _on_quit():
+	get_tree().quit()
