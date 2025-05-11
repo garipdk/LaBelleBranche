@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cg5mkkqu6ihjf" path="res://Particle/particle_effect_evolution.tscn" id="2_spcsk"]
 [ext_resource type="PackedScene" uid="uid://diltpgi7f5h8p" path="res://Assets/3D Models/Graine/TreeBasic0.glb" id="3_3ifl5"]
 [ext_resource type="PackedScene" uid="uid://1o8rx2b3l8d6" path="res://Assets/Objets_pour_arbre/BarDeFer.glb" id="3_7sx0u"]
+[ext_resource type="PackedScene" uid="uid://b5kvshqonphoc" path="res://Assets/3D Models/Arbres/Arbuste/TreeBasic1.glb" id="4_2jmru"]
 [ext_resource type="PackedScene" uid="uid://cbqwsgemsd7ck" path="res://Assets/Objets_pour_arbre/Oiseau.glb" id="4_i0dpw"]
 [ext_resource type="PackedScene" uid="uid://b8xalrfy4uwvy" path="res://Assets/3D Models/Arbres/Rational_final/TreeScience3.glb" id="4_ss1df"]
 [ext_resource type="PackedScene" uid="uid://dqh3oxh1d8243" path="res://Assets/Objets_pour_arbre/Engrais.glb" id="5_1poxr"]
@@ -16,14 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://d2sxl71khn6v0" path="res://Assets/Objets_pour_arbre/Lunettes.glb" id="9_qrlye"]
 [ext_resource type="PackedScene" uid="uid://bwk0ghfsgmhdv" path="res://Assets/Objets_pour_arbre/FeuilleMorte.glb" id="11_2rhhc"]
 [ext_resource type="AudioStream" uid="uid://b1exdfpvee4pk" path="res://Assets/Sounds/poof.wav" id="14_wnlg3"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spcsk"]
-albedo_color = Color(0, 1, 0, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_4ssft"]
-material = SubResource("StandardMaterial3D_spcsk")
-radius = 0.125
-height = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7sx0u"]
 albedo_color = Color(0.252028, 0.252028, 0.252028, 1)
@@ -46,6 +39,9 @@ material = SubResource("StandardMaterial3D_7sx0u")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6mode"]
 material = SubResource("StandardMaterial3D_i0dpw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spcsk"]
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ss1df"]
 material = SubResource("StandardMaterial3D_spcsk")
@@ -73,11 +69,8 @@ one_shot = true
 [node name="TreeBasic0" parent="." instance=ExtResource("3_3ifl5")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1.70267, 0)
 
-[node name="TreeBasic1" type="Node3D" parent="."]
-
-[node name="TreeBasic1MeshInstance3D" type="MeshInstance3D" parent="TreeBasic1"]
-mesh = SubResource("CapsuleMesh_4ssft")
-skeleton = NodePath("../..")
+[node name="TreeBasic1" parent="." instance=ExtResource("4_2jmru")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.94008, 0)
 
 [node name="TreeScience1" type="Node3D" parent="."]
 
