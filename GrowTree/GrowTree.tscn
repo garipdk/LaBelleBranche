@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://coe6hqacb5mji"]
+[gd_scene load_steps=27 format=3 uid="uid://coe6hqacb5mji"]
 
 [ext_resource type="Script" uid="uid://y4fuijfll6vg" path="res://GrowTree/grow_tree.gd" id="1_bmqap"]
 [ext_resource type="PackedScene" uid="uid://7mjhpjm2lsct" path="res://Assets/Objets_pour_arbre/Briquet.glb" id="2_4ssft"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b321hyjree2ix" path="res://Assets/Objets_pour_arbre/Livre.glb" id="8_k7yt5"]
 [ext_resource type="PackedScene" uid="uid://d2sxl71khn6v0" path="res://Assets/Objets_pour_arbre/Lunettes.glb" id="9_qrlye"]
 [ext_resource type="PackedScene" uid="uid://bwk0ghfsgmhdv" path="res://Assets/Objets_pour_arbre/FeuilleMorte.glb" id="11_2rhhc"]
+[ext_resource type="AudioStream" uid="uid://b1exdfpvee4pk" path="res://Assets/Sounds/poof.wav" id="14_wnlg3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spcsk"]
 albedo_color = Color(0, 1, 0, 1)
@@ -249,6 +250,9 @@ shape = SubResource("BoxShape3D_bmqap")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="GrowSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_wnlg3")
 
 [connection signal="input_event" from="ToolBar/Oiseau/OiseauStaticBody3D" to="." method="_on_oiseau_static_body_3d_input_event"]
 [connection signal="input_event" from="ToolBar/Engrais/EngraisStaticBody3D" to="." method="_on_engrais_static_body_3d_input_event"]

@@ -158,6 +158,7 @@ func next_turn(turn_object:Dictionary):
 		particles.change_color(particles.Type.NEUTRAL)
 		particles.emitting = true
 	is_timer_finished = false
+	$GrowSound.play()
 	timer.start()
 
 func make_invisible(things:Array):
