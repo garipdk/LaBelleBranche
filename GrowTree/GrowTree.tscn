@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cbqwsgemsd7ck" path="res://Assets/Objets_pour_arbre/Oiseau.glb" id="4_i0dpw"]
 [ext_resource type="PackedScene" uid="uid://b8xalrfy4uwvy" path="res://Assets/3D Models/Arbres/Rational_final/TreeScience3.glb" id="4_ss1df"]
 [ext_resource type="PackedScene" uid="uid://dqh3oxh1d8243" path="res://Assets/Objets_pour_arbre/Engrais.glb" id="5_1poxr"]
+[ext_resource type="PackedScene" uid="uid://2axe47etkpox" path="res://Assets/3D Models/Arbres/Emo_Final/TreeMagic3.glb" id="5_2rhhc"]
 [ext_resource type="PackedScene" uid="uid://cesp8i745jycs" path="res://Assets/Objets_pour_arbre/Peinture.glb" id="6_ss1df"]
 [ext_resource type="PackedScene" uid="uid://b321hyjree2ix" path="res://Assets/Objets_pour_arbre/Livre.glb" id="8_k7yt5"]
 [ext_resource type="PackedScene" uid="uid://d2sxl71khn6v0" path="res://Assets/Objets_pour_arbre/Lunettes.glb" id="9_qrlye"]
@@ -45,11 +46,6 @@ material = SubResource("StandardMaterial3D_i0dpw")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ss1df"]
 material = SubResource("StandardMaterial3D_spcsk")
-radius = 1.0
-height = 4.0
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_qrlye"]
-material = SubResource("StandardMaterial3D_i0dpw")
 radius = 1.0
 height = 4.0
 
@@ -137,12 +133,9 @@ visible = false
 mesh = SubResource("CapsuleMesh_ss1df")
 skeleton = NodePath("")
 
-[node name="TreeMagic3" type="Node3D" parent="."]
+[node name="TreeMagic3" parent="." instance=ExtResource("5_2rhhc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -2, 0)
 visible = false
-
-[node name="TreeMagic3MeshInstance3D" type="MeshInstance3D" parent="TreeMagic3"]
-mesh = SubResource("CapsuleMesh_qrlye")
-skeleton = NodePath("../..")
 
 [node name="ToolBar" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18788, 0.618334, 1.40859)
