@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cfkqnvgla4txh" path="res://Main/main.gd" id="1_u2i7p"]
 [ext_resource type="Script" uid="uid://b2c8ur5b04ude" path="res://Main/scripts/camera_3d.gd" id="2_amygn"]
 [ext_resource type="PackedScene" uid="uid://coe6hqacb5mji" path="res://GrowTree/GrowTree.tscn" id="3_amygn"]
+[ext_resource type="Texture2D" uid="uid://c1kf0h6ovj4cs" path="res://Assets/Texture_bois.png" id="3_d3r6l"]
 [ext_resource type="Texture2D" uid="uid://cgyc8tme8ga1a" path="res://Assets/UI/Bouton collection.png" id="4_6ivxk"]
 [ext_resource type="PackedScene" uid="uid://4nyot1fh5f8g" path="res://Assets/3D Models/Mesh_Meuble/table.tscn" id="4_qg80j"]
 [ext_resource type="PackedScene" uid="uid://dmjaohtonc7be" path="res://Collection/Collection.tscn" id="5_6aewd"]
@@ -211,16 +212,13 @@ _data = {
 &"RESET": SubResource("Animation_ps1la")
 }
 
-[sub_resource type="Gradient" id="Gradient_ps1la"]
-colors = PackedColorArray(0.13966, 0.0635173, 0.0675152, 1, 0.42321, 0.252242, 0.130305, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fayjp"]
+albedo_texture = ExtResource("3_d3r6l")
+uv1_triplanar = true
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_6aewd"]
-frequency = 0.107
-fractal_type = 3
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u2i7p"]
-color_ramp = SubResource("Gradient_ps1la")
-noise = SubResource("FastNoiseLite_6aewd")
+[sub_resource type="BoxMesh" id="BoxMesh_j2iu7"]
+material = SubResource("StandardMaterial3D_fayjp")
+size = Vector3(30, 1, 60)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6aewd"]
 albedo_texture = ExtResource("13_d3r6l")
@@ -277,9 +275,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_6aewd")
 }
 
-[node name="Floor" type="Sprite3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, -4.37114e-07, -10, 0, 10, -4.37114e-07, -12.4984, -2, 0)
-texture = SubResource("NoiseTexture2D_u2i7p")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59992, -2.45416, 0)
+mesh = SubResource("BoxMesh_j2iu7")
 
 [node name="Buttons" type="Node" parent="."]
 
