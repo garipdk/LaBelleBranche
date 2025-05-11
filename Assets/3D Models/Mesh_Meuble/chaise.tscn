@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://7gjavglr14hc"]
+[gd_scene load_steps=6 format=3 uid="uid://7gjavglr14hc"]
 
 [ext_resource type="Material" uid="uid://dgvxs16d4e67v" path="res://Assets/Material/wood_noise.material" id="1_s0ro6"]
 
@@ -8,36 +8,63 @@ top_radius = 0.2
 bottom_radius = 0.2
 height = 1.2
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_s0ro6"]
+material = ExtResource("1_s0ro6")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.8
+
 [sub_resource type="BoxMesh" id="BoxMesh_6k3u6"]
 material = ExtResource("1_s0ro6")
-size = Vector3(2, 0.2, 2)
+size = Vector3(2.1, 0.2, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qb0st"]
 material = ExtResource("1_s0ro6")
-size = Vector3(0.2, 2, 2)
+size = Vector3(0.3, 0.2, 1.8)
 
 [node name="Chaise" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000165939, -0.019311, 0.00327873)
 
-[node name="Pied4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+[node name="Pied1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.449223, 0.6, 0)
 mesh = SubResource("CylinderMesh_mpsd3")
 
-[node name="Pied5" type="MeshInstance3D" parent="."]
+[node name="Pied2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.6, 0)
 mesh = SubResource("CylinderMesh_mpsd3")
 
-[node name="Pied6" type="MeshInstance3D" parent="."]
+[node name="Pied3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.6, 1)
 mesh = SubResource("CylinderMesh_mpsd3")
 
-[node name="Pied7" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 1)
+[node name="Pied4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.449223, 0.6, 1)
 mesh = SubResource("CylinderMesh_mpsd3")
 
+[node name="Dossier1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.484, 2.163, 1.2)
+mesh = SubResource("CylinderMesh_s0ro6")
+
+[node name="Dossier4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.484, 2.163, 0.5)
+mesh = SubResource("CylinderMesh_s0ro6")
+
+[node name="Dossier3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.484, 2.163, -0.2)
+mesh = SubResource("CylinderMesh_s0ro6")
+
+[node name="Dossier5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.484, 2.163, 0.15)
+mesh = SubResource("CylinderMesh_s0ro6")
+
+[node name="Dossier6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.489747, 2.16863, 0.848846)
+mesh = SubResource("CylinderMesh_s0ro6")
+
 [node name="Assise" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.2, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.394318, 1.2, 0.5)
 mesh = SubResource("BoxMesh_6k3u6")
 
 [node name="Dossier" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2.133, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47294, 3.03227, 0.5)
 mesh = SubResource("BoxMesh_qb0st")
