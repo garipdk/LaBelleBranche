@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn5nu5b183u71"
-path="res://.godot/imported/Bouton quiter.png-43307e09d877e69bd1114d471df8f946.ctex"
+uid="uid://dkctk6cmjp255"
+path="res://.godot/imported/Bravo,tu as un magnifique arbre.png-7d49c60c336e6d7054232340cf5c1a68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Bouton quiter.png"
-dest_files=["res://.godot/imported/Bouton quiter.png-43307e09d877e69bd1114d471df8f946.ctex"]
+source_file="res://Assets/UI/Bravo,tu as un magnifique arbre.png"
+dest_files=["res://.godot/imported/Bravo,tu as un magnifique arbre.png-7d49c60c336e6d7054232340cf5c1a68.ctex"]
 
 [params]
 
