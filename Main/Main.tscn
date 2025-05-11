@@ -1,10 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://rxvrkdw32yk7"]
+[gd_scene load_steps=30 format=3 uid="uid://rxvrkdw32yk7"]
 
 [ext_resource type="PackedScene" uid="uid://da25w22xck8hd" path="res://Main/Button.tscn" id="1_lxy7q"]
 [ext_resource type="Script" uid="uid://cfkqnvgla4txh" path="res://Main/main.gd" id="1_u2i7p"]
 [ext_resource type="Script" uid="uid://b2c8ur5b04ude" path="res://Main/scripts/camera_3d.gd" id="2_amygn"]
 [ext_resource type="Texture2D" uid="uid://bjakcpqs28to2" path="res://Assets/Wall.jpg" id="2_ps1la"]
 [ext_resource type="PackedScene" uid="uid://coe6hqacb5mji" path="res://GrowTree/GrowTree.tscn" id="3_amygn"]
+[ext_resource type="PackedScene" uid="uid://4nyot1fh5f8g" path="res://Assets/3D Models/Mesh_Meuble/table.tscn" id="4_qg80j"]
 [ext_resource type="PackedScene" uid="uid://dmjaohtonc7be" path="res://Collection/Collection.tscn" id="5_6aewd"]
 [ext_resource type="AudioStream" uid="uid://ds0gsfly71mng" path="res://Assets/Sounds/belle_branche.wav" id="7_hh5pf"]
 
@@ -371,6 +372,9 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13736, 7.44779, -0.039196)
 mesh = SubResource("BoxMesh_hh5pf")
 skeleton = NodePath("../MurCollection")
+
+[node name="Table" parent="House" instance=ExtResource("4_qg80j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.70013, -0.967862, 8.97003)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qg80j")
