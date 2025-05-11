@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmjaohtonc7be"]
+[gd_scene load_steps=7 format=3 uid="uid://dmjaohtonc7be"]
 
 [ext_resource type="Script" uid="uid://cqxriopbnkggq" path="res://Collection/collection.gd" id="1_bwq0v"]
 [ext_resource type="PackedScene" uid="uid://djl1ak8hvc2rf" path="res://Collection/Shelf.tscn" id="2_tc5um"]
 [ext_resource type="PackedScene" uid="uid://btj3cp0bhn1a0" path="res://Collection/Pot.tscn" id="3_d7vp7"]
 [ext_resource type="PackedScene" uid="uid://2axe47etkpox" path="res://Assets/3D Models/Arbres/Emo_Final/TreeMagic3.glb" id="4_at5xh"]
 [ext_resource type="PackedScene" uid="uid://b8xalrfy4uwvy" path="res://Assets/3D Models/Arbres/Rational_final/TreeScience3.glb" id="4_bwq0v"]
+[ext_resource type="PackedScene" uid="uid://bmdttnrb2oawc" path="res://Assets/3D Models/Arbres/Neutral_Big/TreeBasic3.glb" id="6_ncvdq"]
 
 [node name="Collection" type="Node3D"]
 script = ExtResource("1_bwq0v")
@@ -32,3 +33,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52686, 0, 0)
 tree_scene = ExtResource("4_bwq0v")
 
 [node name="PotMultifruit" parent="PotList" instance=ExtResource("3_d7vp7")]
+tree_scene = ExtResource("6_ncvdq")
+tree_y_offset = 0.5

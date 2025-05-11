@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://coe6hqacb5mji"]
+[gd_scene load_steps=26 format=3 uid="uid://coe6hqacb5mji"]
 
 [ext_resource type="Script" uid="uid://y4fuijfll6vg" path="res://GrowTree/grow_tree.gd" id="1_bmqap"]
 [ext_resource type="PackedScene" uid="uid://7mjhpjm2lsct" path="res://Assets/Objets_pour_arbre/Briquet.glb" id="2_4ssft"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dqh3oxh1d8243" path="res://Assets/Objets_pour_arbre/Engrais.glb" id="5_1poxr"]
 [ext_resource type="PackedScene" uid="uid://2axe47etkpox" path="res://Assets/3D Models/Arbres/Emo_Final/TreeMagic3.glb" id="5_2rhhc"]
 [ext_resource type="PackedScene" uid="uid://cesp8i745jycs" path="res://Assets/Objets_pour_arbre/Peinture.glb" id="6_ss1df"]
+[ext_resource type="PackedScene" uid="uid://bmdttnrb2oawc" path="res://Assets/3D Models/Arbres/Neutral_Big/TreeBasic3.glb" id="7_byaj8"]
 [ext_resource type="Texture2D" uid="uid://yd8ywly4irbn" path="res://Assets/UI/Cadre objets.png" id="7_mmtbd"]
 [ext_resource type="PackedScene" uid="uid://b321hyjree2ix" path="res://Assets/Objets_pour_arbre/Livre.glb" id="8_k7yt5"]
 [ext_resource type="PackedScene" uid="uid://d2sxl71khn6v0" path="res://Assets/Objets_pour_arbre/Lunettes.glb" id="9_qrlye"]
@@ -40,14 +41,6 @@ material = SubResource("StandardMaterial3D_7sx0u")
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6mode"]
 material = SubResource("StandardMaterial3D_i0dpw")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spcsk"]
-albedo_color = Color(0, 1, 0, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ss1df"]
-material = SubResource("StandardMaterial3D_spcsk")
-radius = 1.0
-height = 4.0
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_bmqap"]
 size = Vector3(0.2, 0.2, 0.16)
 
@@ -68,23 +61,28 @@ one_shot = true
 
 [node name="TreeBasic0" parent="." instance=ExtResource("3_3ifl5")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1.70267, 0)
+visible = false
 
 [node name="TreeBasic1" parent="." instance=ExtResource("4_2jmru")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.94008, 0)
+visible = false
 
 [node name="TreeScience1" type="Node3D" parent="."]
+visible = false
 
 [node name="TreeScience1MeshInstance3D" type="MeshInstance3D" parent="TreeScience1"]
 mesh = SubResource("CapsuleMesh_bmqap")
 skeleton = NodePath("../..")
 
 [node name="TreeMagic1" type="Node3D" parent="."]
+visible = false
 
 [node name="TreeMagic1MeshInstance3D" type="MeshInstance3D" parent="TreeMagic1"]
 mesh = SubResource("CapsuleMesh_hn6fc")
 skeleton = NodePath("../..")
 
 [node name="TreeScience2" type="Node3D" parent="."]
+visible = false
 
 [node name="TreeScience2MeshInstance3D" type="MeshInstance3D" parent="TreeScience2"]
 mesh = SubResource("CapsuleMesh_i0dpw")
@@ -92,8 +90,10 @@ skeleton = NodePath("../..")
 
 [node name="TreeBasic2" parent="." instance=ExtResource("2_7sx0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+visible = false
 
 [node name="TreeMagic2" type="Node3D" parent="."]
+visible = false
 
 [node name="TreeMagic2MeshInstance3D" type="MeshInstance3D" parent="TreeMagic2"]
 mesh = SubResource("CapsuleMesh_6mode")
@@ -102,14 +102,12 @@ skeleton = NodePath("../..")
 [node name="TreeScience3" parent="." instance=ExtResource("4_ss1df")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.76894, 0)
 
-[node name="TreeBasic3" type="Node3D" parent="."]
-
-[node name="TreeBasic3MeshInstance3D" type="MeshInstance3D" parent="TreeBasic3"]
-mesh = SubResource("CapsuleMesh_ss1df")
-skeleton = NodePath("")
+[node name="TreeBasic3" parent="." instance=ExtResource("7_byaj8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.30874, 0)
 
 [node name="TreeMagic3" parent="." instance=ExtResource("5_2rhhc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -2, 0)
+visible = false
 
 [node name="ToolBar" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18788, 0.618334, 1.40859)
