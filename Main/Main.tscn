@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://rxvrkdw32yk7"]
+[gd_scene load_steps=29 format=3 uid="uid://rxvrkdw32yk7"]
 
 [ext_resource type="PackedScene" uid="uid://da25w22xck8hd" path="res://Main/Button.tscn" id="1_lxy7q"]
 [ext_resource type="Script" uid="uid://cfkqnvgla4txh" path="res://Main/main.gd" id="1_u2i7p"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bjakcpqs28to2" path="res://Assets/Wall.jpg" id="2_ps1la"]
 [ext_resource type="PackedScene" uid="uid://coe6hqacb5mji" path="res://GrowTree/GrowTree.tscn" id="3_amygn"]
 [ext_resource type="PackedScene" uid="uid://dmjaohtonc7be" path="res://Collection/Collection.tscn" id="5_6aewd"]
+[ext_resource type="AudioStream" uid="uid://ds0gsfly71mng" path="res://Assets/Sounds/belle_branche.wav" id="7_hh5pf"]
 
 [sub_resource type="Animation" id="Animation_u2i7p"]
 resource_name = "Collection_to_Main"
@@ -289,6 +290,7 @@ text = "Menu"
 
 [node name="Game_to_Collection" parent="Buttons" instance=ExtResource("1_lxy7q")]
 transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 13.322, 0, -2.3)
+visible = false
 text = "Collection"
 
 [node name="Reset_Collection" parent="Buttons" instance=ExtResource("1_lxy7q")]
@@ -391,6 +393,10 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2, 6.
 text = "Crédits :"
 font_size = 60
 outline_size = 30
+
+[node name="BelleBrancheAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_hh5pf")
+autoplay = true
 
 [connection signal="turn" from="Buttons/Colletion" to="Camera3D" method="_on_colletion_turn_collection"]
 [connection signal="turn" from="Buttons/Start game" to="." method="_on_start_game_turn"]
