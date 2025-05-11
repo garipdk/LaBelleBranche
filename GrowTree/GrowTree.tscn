@@ -80,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75611, 0, 0)
 one_shot = true
 
 [node name="TreeBasic0" parent="." instance=ExtResource("3_3ifl5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8101, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1.70267, 0)
 
 [node name="TreeBasic1" type="Node3D" parent="."]
 
@@ -161,7 +161,6 @@ shape = SubResource("BoxShape3D_bmqap")
 
 [node name="Peinture" parent="ToolBar" instance=ExtResource("6_ss1df")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.91278e-05, -0.0424504, 0.2)
-visible = false
 
 [node name="Tableau" parent="ToolBar/Peinture" index="0"]
 transform = Transform3D(8.01762, 0, 0, 0, 8.01762, 0, 0, 0, 8.01762, 0, -0.016874, 0)
@@ -174,7 +173,6 @@ shape = SubResource("BoxShape3D_bmqap")
 
 [node name="Livre" parent="ToolBar" instance=ExtResource("8_k7yt5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.91278e-05, 0, -0.2)
-visible = false
 
 [node name="Livre" parent="ToolBar/Livre" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0384228, -0.0356975, 0)
@@ -187,7 +185,6 @@ shape = SubResource("BoxShape3D_bmqap")
 
 [node name="Briquet" parent="ToolBar" instance=ExtResource("2_4ssft")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0246654, 0.6)
-visible = false
 
 [node name="Briquet" parent="ToolBar/Briquet" index="0"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.084, 0)
@@ -200,7 +197,6 @@ shape = SubResource("BoxShape3D_bmqap")
 
 [node name="BarDeFer" parent="ToolBar" instance=ExtResource("3_7sx0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
-visible = false
 
 [node name="Barre de fer" parent="ToolBar/BarDeFer" index="0"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.0872648, 0)
@@ -213,7 +209,6 @@ shape = SubResource("BoxShape3D_bmqap")
 
 [node name="FeuilleMorte" parent="ToolBar" instance=ExtResource("11_2rhhc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
-visible = false
 
 [node name="FeuilleMorte" parent="ToolBar/FeuilleMorte" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0215125, -0.0145298, 0)
@@ -226,7 +221,6 @@ shape = SubResource("BoxShape3D_bmqap")
 
 [node name="Lunettes" parent="ToolBar" instance=ExtResource("9_qrlye")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0376416, -0.6)
-visible = false
 
 [node name="Lunettes" parent="ToolBar/Lunettes" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125027, 0, 0)
