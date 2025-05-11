@@ -151,12 +151,15 @@ func next_turn(turn_object:Dictionary):
 	
 	if statistic_science_magic > 0:
 		particles.change_color(particles.Type.EMOTIONAL)
+		particles.launch_poof()
 		particles.emitting = true
 	elif statistic_science_magic < 0:
 		particles.change_color(particles.Type.SCIENCE)
+		particles.launch_poof()
 		particles.emitting = true
 	else:
 		particles.change_color(particles.Type.NEUTRAL)
+		particles.launch_poof()
 		particles.emitting = true
 	is_timer_finished = false
 	$GrowSound.play()
